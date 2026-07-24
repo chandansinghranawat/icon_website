@@ -1,0 +1,2947 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ICON Institute — Learn. Achieve. Lead.</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap"
+  rel="stylesheet"
+>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  crossorigin="anonymous"
+>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+/* =========================================================
+   HERO BUILDING SECTION
+   Desktop/Tablet: original layout (unchanged)
+   Mobile ≤480px: image stacked above text
+   ========================================================= */
+
+.hero-fluid-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 36px 0 0;
+  padding: 0;
+}
+
+.hero-fluid-container .hero-bottom.hero-building {
+  box-sizing: border-box;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100%;
+  max-width: none;
+  min-height: 470px;
+
+  margin: 0;
+  padding: 72px clamp(24px, 6vw, 96px);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.99) 0%,
+      rgba(255, 255, 255, 0.97) 34%,
+      rgba(255, 255, 255, 0.82) 56%,
+      rgba(255, 255, 255, 0.20) 100%
+    ),
+    url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=90");
+
+  background-size: cover;
+  background-position: center 52%;
+  background-repeat: no-repeat;
+}
+
+.hero-fluid-container .hero-bottom.hero-building::before,
+.hero-fluid-container .hero-bottom.hero-building::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-fluid-container .hero-bottom.hero-building .hero-text {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
+}
+
+.hero-fluid-container .hero-bottom.hero-building .hero-badge {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-fluid-container .hero-bottom.hero-building .hero-text p {
+  max-width: 610px;
+}
+
+/* ── Tablet 980px (original breakpoint) ── */
+@media screen and (max-width: 980px) {
+  .hero-fluid-container .hero-bottom.hero-building {
+    min-height: 440px;
+    padding: 58px 40px;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.99) 0%,
+        rgba(255, 255, 255, 0.94) 44%,
+        rgba(255, 255, 255, 0.62) 72%,
+        rgba(255, 255, 255, 0.18) 100%
+      ),
+      url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=88");
+
+    background-position: 58% center;
+  }
+
+  .hero-fluid-container .hero-bottom.hero-building .hero-text {
+    max-width: 620px;
+  }
+}
+
+/* ── Mobile ≤480px: text on top, building image below ── */
+@media screen and (max-width: 480px) {
+  .hero-fluid-container {
+    margin-top: 24px; /* keeps breathing room from the hero section above */
+  }
+
+  /* Section becomes a vertical flex column */
+  .hero-fluid-container .hero-bottom.hero-building {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: unset;
+    padding: 0;
+    background-image: none;
+    background: #fff;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  /* Text block: sits at the TOP, full width, with breathing room from the section above */
+  .hero-fluid-container .hero-bottom.hero-building .hero-text {
+    order: 1;
+    position: relative !important;
+    z-index: 2;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 32px 18px 24px;
+    background: #fff;
+  }
+
+  .hero-fluid-container .hero-bottom.hero-building .hero-text p {
+    max-width: 100%;
+  }
+
+  .hero-fluid-container .hero-bottom.hero-building .hero-text h1 {
+    font-size: clamp(26px, 7.5vw, 36px);
+    line-height: 1.15;
+  }
+
+  .hero-fluid-container .hero-bottom.hero-building .hero-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-fluid-container .hero-bottom.hero-building .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Building image block: goes BELOW the text */
+  .hero-building-image-wrap {
+    order: 2;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background: none !important;
+    min-height: unset !important;
+    padding: 0;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  /* icon.png — perfectly centered, original image */
+  .hero-building-image {
+    display: block;
+    position: relative !important;
+    width: auto;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    mix-blend-mode: normal;
+    object-fit: contain;
+  }
+}
+
+/* ── Very small phones ≤360px ── */
+@media screen and (max-width: 360px) {
+  .hero-fluid-container .hero-bottom.hero-building .hero-text {
+    padding: 24px 14px 20px;
+  }
+  .hero-fluid-container .hero-bottom.hero-building .hero-text h1 {
+    font-size: 24px;
+  }
+  .hero-building-image-wrap {
+    padding: 0 12px 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Intro overlay -->
+<div
+  id="intro-overlay"
+  style="
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0f172a;
+    pointer-events: none;
+  "
+>
+
+  <!-- Left Curtain -->
+  <div
+    id="curt-left"
+    style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: #0f172a;
+      z-index: 2;
+      transition: transform 0.8s cubic-bezier(.77,0,.175,1);
+    "
+  ></div>
+
+  <!-- Right Curtain -->
+  <div
+    id="curt-right"
+    style="
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: #0f172a;
+      z-index: 2;
+      transition: transform 0.8s cubic-bezier(.77,0,.175,1);
+    "
+  ></div>
+
+  <!-- Cube Wrapper -->
+  <div
+    id="cube-wrap"
+    style="
+      position: relative;
+      z-index: 3;
+      perspective: 1000px;
+      width: 300px;
+      height: 300px;
+    "
+  >
+    <div 
+      id="cube"
+      style="
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: spinCube 8s infinite linear;
+      "
+    >
+      <!-- Front Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateY(0deg) translateZ(150px);">
+        <img src="img/ACE CAT(1).png" alt="ACE CAT" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+      <!-- Back Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateY(180deg) translateZ(150px);">
+        <img src="img/ICON Hindi.png" alt="ACE CAT" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+      <!-- Left Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateY(-90deg) translateZ(150px);">
+        <img src="img/ICON_.png" alt="ICON" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+      <!-- Right Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateY(90deg) translateZ(150px);">
+        <img src="img/Untitled (77).png" alt="ACE CAT" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+      <!-- Top Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateX(90deg) translateZ(150px);">
+        <img src="img/ICON Hindi.png" alt="ICON" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+      <!-- Bottom Face -->
+      <div style="position: absolute; width: 300px; height: 300px; background: rgba(15, 23, 42, 0.95); border: 2px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transform: rotateX(-90deg) translateZ(150px);">
+        <img src="img/Untitled (77).png" alt="ACE CAT" style="max-width: 80%; max-height: 80%; object-fit: contain;" />
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- Header -->
+<header>
+
+  <div class="nav-topbar wrap">
+    <a href="past-papers.html">Past Papers</a>
+    <a href="blog.html">Blog</a>
+    <a href="#footer">Contact Us</a>
+
+    <a href="tel:+919800000000" class="call-link">
+      <i class="fa-solid fa-phone"></i>
+      +91 98XXX XXXXX
+    </a>
+  </div>
+
+  <div class="wrap nav">
+
+    <a href="#home" class="logo">
+      <img src="logo.png" alt="ICON Institute" class="logo-img">
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+
+      <li id="dd-courses">
+
+        <button onclick="toggleDD('dd-courses')">
+          Courses
+          <i class="fa-solid fa-chevron-down dd-chev"></i>
+        </button>
+
+        <div class="dropdown">
+
+          <a href="#">
+            <div class="dd-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>JEE Main &amp; Advanced</strong>
+              <span>Class 11–12 · 2 Years</span>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="dd-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>NEET UG</strong>
+              <span>Class 11–12 · 2 Years</span>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="dd-icon">
+              <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Foundation 9–10</strong>
+              <span>Class 9–10 · 2 Years</span>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="dd-icon">
+              <i class="fa-solid fa-desktop"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>CUET Prep</strong>
+              <span>Class 12 · 1 Year</span>
+            </div>
+          </a>
+
+          <div class="dd-divider"></div>
+
+          <a href="#courses">
+            <div class="dd-icon">
+              <i class="fa-solid fa-grip"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>View All 10 Courses</strong>
+              <span>Explore full catalog</span>
+            </div>
+          </a>
+
+        </div>
+      </li>
+
+      <li>
+        <a href="#mentors">Our Team</a>
+      </li>
+
+      <li id="dd-demo">
+
+        <button onclick="toggleDD('dd-demo')">
+          Demo Class
+          <i class="fa-solid fa-chevron-down dd-chev"></i>
+        </button>
+
+        <div class="dropdown">
+
+          <a
+            href="#contact"
+            onclick="openBookingForm('Personal Counselling')"
+          >
+            <div class="dd-icon">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Personal Counselling</strong>
+              <span>1-on-1 session with our advisor</span>
+            </div>
+          </a>
+
+          <a
+            href="#contact"
+            onclick="openBookingForm('Live Demo Class')"
+          >
+            <div class="dd-icon">
+              <i class="fa-solid fa-video"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Live Demo Class</strong>
+              <span>Join a free live session today</span>
+            </div>
+          </a>
+
+        </div>
+      </li>
+
+      <li id="dd-res">
+
+        <button onclick="toggleDD('dd-res')">
+          Resources
+          <i class="fa-solid fa-chevron-down dd-chev"></i>
+        </button>
+
+        <div class="dropdown">
+
+          <a href="past-papers.html">
+            <div class="dd-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Past Papers</strong>
+              <span>JEE, NEET, Board archives</span>
+            </div>
+          </a>
+
+          <a href="blog.html">
+            <div class="dd-icon">
+              <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Blog</strong>
+              <span>Tips, strategies, student stories</span>
+            </div>
+          </a>
+
+        </div>
+      </li>
+
+      <li>
+        <a href="#footer">Contact Us</a>
+      </li>
+
+    </ul>
+
+    <div class="nav-cta">
+
+      <button
+        class="btn-book"
+        onclick="toggleDD('dd-book')"
+        style="position: relative;"
+      >
+        Book Now — Free
+        <i class="fa-solid fa-chevron-down dd-chev"></i>
+
+        <div
+          class="dropdown"
+          id="dd-book"
+          style="
+            left: auto;
+            right: 0;
+            transform: none;
+            min-width: 240px;
+          "
+        >
+
+          <a
+            href="#contact"
+            onclick="openBookingForm('Personal Counselling')"
+          >
+            <div class="dd-icon">
+              <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Personal Counselling</strong>
+              <span>1-on-1 session with our advisor</span>
+            </div>
+          </a>
+
+          <a
+            href="#contact"
+            onclick="openBookingForm('Live Demo Class')"
+          >
+            <div class="dd-icon">
+              <i class="fa-solid fa-video"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>Live Demo Class</strong>
+              <span>Reserve your free seat</span>
+            </div>
+          </a>
+
+        </div>
+      </button>
+
+      <button
+        class="burger"
+        aria-label="Menu"
+        onclick="document.getElementById('navLinks').classList.toggle('nav-open')"
+      >
+        <svg viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- Hero -->
+<section class="hero" id="home">
+
+
+
+<div class="wrap">
+
+  <div class="hero-media">
+
+    <!-- LEFT IMAGE SLIDER -->
+
+    <div class="slider" id="heroSlider">
+
+      <div class="slide active" style="background-image: url('https://i.pinimg.com/736x/39/76/df/3976df2e5e5f263b689f2b2481ae488c.jpg');">
+
+        <div class="slide-caption">
+
+          <span class="stag">
+            Campus Life
+          </span>
+
+          <h3>
+            Modern classrooms built for focus
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/10/73/5a/10735a1fba9d6b4b17a922141e063fe6.jpg');">
+
+        <div class="slide-caption">
+
+          <span class="stag">
+            Doubt Sessions
+          </span>
+
+          <h3>
+            One-on-one mentoring, every week
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/52/ee/9b/52ee9ba6cd61aa5abcfbed87fc5205d7.jpg');">
+
+        <div class="slide-caption">
+
+          <span class="stag">
+            Results Day
+          </span>
+
+          <h3>
+            1,200+ selections in 2025 alone
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/83/b3/4f/83b34f48988a129cad4ac41d1777a197.jpg');">
+
+        <div class="slide-caption">
+
+          <span class="stag">
+            Labs
+          </span>
+
+          <h3>
+            Hands-on practicals, not just theory
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div
+        class="slider-dots"
+        id="sliderDots"
+      ></div>
+
+      <div class="slider-arrows">
+
+        <button
+          id="prevSlide"
+          type="button"
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+
+        <button
+          id="nextSlide"
+          type="button"
+          aria-label="Next"
+        >
+          ›
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT VIDEO PANEL -->
+
+    <div class="video-panel">
+
+      <div class="video-frame">
+
+        <div id="yt-player"></div>
+
+        <!--
+          Video autoplay ho jaayegi to thumbnail automatically hide hogi.
+          Autoplay block ho to thumbnail click karke video play hogi.
+        -->
+
+        <button
+          class="hero-video-thumbnail"
+          id="heroVideoThumbnail"
+          type="button"
+          onclick="startHeroVideo()"
+          aria-label="Play Life at ICON Campus Tour"
+        >
+
+          <img
+            src="https://img.youtube.com/vi/xYbSEotAEF8/maxresdefault.jpg"
+            onerror="
+              this.onerror = null;
+              this.src = 'https://img.youtube.com/vi/xYbSEotAEF8/hqdefault.jpg';
+            "
+            alt="Life at ICON Campus Tour video thumbnail"
+          >
+
+          <span class="thumbnail-play-button">
+
+            <i class="fa-solid fa-play"></i>
+
+          </span>
+
+          <span class="thumbnail-video-info">
+
+            <span>
+
+              <i class="fa-brands fa-youtube"></i>
+
+              Campus Video
+
+            </span>
+
+            <strong>
+              Life at ICON — Campus Tour
+            </strong>
+
+          </span>
+
+        </button>
+
+      </div>
+
+      <!-- VIDEO PROGRESS -->
+
+      <div
+        class="vc-progress"
+        id="vc-progress"
+        onclick="vcSeek(event)"
+      >
+
+        <div
+          class="vc-progress-fill"
+          id="vc-fill"
+        ></div>
+
+      </div>
+
+      <!-- VIDEO CONTROLS -->
+
+      <div class="vc-bar">
+
+        <span class="vc-title">
+          Life at ICON — Campus Tour
+        </span>
+
+        <div class="vc-btns">
+
+          <button
+            class="vc-btn"
+            type="button"
+            title="Back 10 seconds"
+            onclick="vcSeekBy(-10)"
+          >
+
+            <i class="fa-solid fa-backward-step"></i>
+
+          </button>
+
+          <button
+            class="vc-btn"
+            id="vc-play"
+            type="button"
+            title="Play / Pause"
+            onclick="vcTogglePlay()"
+          >
+
+            <i class="fa-solid fa-pause"></i>
+
+          </button>
+
+          <button
+            class="vc-btn"
+            type="button"
+            title="Forward 10 seconds"
+            onclick="vcSeekBy(10)"
+          >
+
+            <i class="fa-solid fa-forward-step"></i>
+
+          </button>
+
+          <button
+            class="vc-btn"
+            id="vc-mute"
+            type="button"
+            title="Sound on / off"
+            onclick="vcToggleMute()"
+          >
+
+            <i class="fa-solid fa-volume-xmark"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  let iconHeroPlayer = null;
+  let iconHeroPlayerReady = false;
+  let iconHeroProgressTimer = null;
+
+  /*
+    YouTube player create karta hai.
+  */
+
+  function createIconHeroPlayer() {
+    if (
+      iconHeroPlayer ||
+      !window.YT ||
+      !YT.Player ||
+      !document.getElementById("yt-player")
+    ) {
+      return;
+    }
+
+    iconHeroPlayer = new YT.Player("yt-player", {
+      videoId: "xYbSEotAEF8",
+
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        loop: 1,
+        playlist: "xYbSEotAEF8",
+        rel: 0,
+        playsinline: 1,
+        modestbranding: 1,
+        iv_load_policy: 3
+      },
+
+      events: {
+        onReady: function (event) {
+          iconHeroPlayerReady = true;
+
+          /*
+            Browser muted autoplay allow karta hai.
+          */
+
+          event.target.mute();
+          event.target.setVolume(100);
+          event.target.playVideo();
+
+          startHeroProgressTimer();
+        },
+
+        onStateChange: function (event) {
+          if (
+            event.data === YT.PlayerState.PLAYING
+          ) {
+            hideHeroVideoThumbnail();
+            updateHeroPlayButton(true);
+          }
+
+          if (
+            event.data === YT.PlayerState.PAUSED
+          ) {
+            updateHeroPlayButton(false);
+          }
+
+          if (
+            event.data === YT.PlayerState.ENDED
+          ) {
+            iconHeroPlayer.seekTo(0, true);
+            iconHeroPlayer.playVideo();
+          }
+        }
+      }
+    });
+  }
+
+  /*
+    YouTube API ready.
+  */
+
+  window.onYouTubeIframeAPIReady = function () {
+    createIconHeroPlayer();
+  };
+
+  /*
+    Thumbnail click se video play.
+  */
+
+  function startHeroVideo() {
+    hideHeroVideoThumbnail();
+
+    if (
+      iconHeroPlayerReady &&
+      iconHeroPlayer
+    ) {
+      iconHeroPlayer.mute();
+      iconHeroPlayer.playVideo();
+    }
+  }
+
+  function hideHeroVideoThumbnail() {
+    const thumbnail =
+      document.getElementById(
+        "heroVideoThumbnail"
+      );
+
+    if (thumbnail) {
+      thumbnail.classList.add(
+        "thumbnail-hidden"
+      );
+    }
+  }
+
+  /*
+    Play / pause button.
+  */
+
+  function vcTogglePlay() {
+    if (
+      !iconHeroPlayerReady ||
+      !iconHeroPlayer
+    ) {
+      return;
+    }
+
+    const playerState =
+      iconHeroPlayer.getPlayerState();
+
+    if (
+      playerState === YT.PlayerState.PLAYING
+    ) {
+      iconHeroPlayer.pauseVideo();
+    } else {
+      hideHeroVideoThumbnail();
+      iconHeroPlayer.playVideo();
+    }
+  }
+
+  /*
+    10 seconds aage ya peeche.
+  */
+
+  function vcSeekBy(seconds) {
+    if (
+      !iconHeroPlayerReady ||
+      !iconHeroPlayer
+    ) {
+      return;
+    }
+
+    const currentTime =
+      iconHeroPlayer.getCurrentTime() || 0;
+
+    const duration =
+      iconHeroPlayer.getDuration() || 0;
+
+    const nextTime = Math.max(
+      0,
+      Math.min(
+        currentTime + seconds,
+        duration
+      )
+    );
+
+    iconHeroPlayer.seekTo(
+      nextTime,
+      true
+    );
+
+    iconHeroPlayer.playVideo();
+  }
+
+  /*
+    Progress bar se seek.
+  */
+
+  function vcSeek(event) {
+    if (
+      !iconHeroPlayerReady ||
+      !iconHeroPlayer
+    ) {
+      return;
+    }
+
+    const progressBar =
+      document.getElementById(
+        "vc-progress"
+      );
+
+    if (!progressBar) {
+      return;
+    }
+
+    const duration =
+      iconHeroPlayer.getDuration();
+
+    if (!duration) {
+      return;
+    }
+
+    const rectangle =
+      progressBar.getBoundingClientRect();
+
+    const position =
+      (event.clientX - rectangle.left) /
+      rectangle.width;
+
+    const safePosition = Math.max(
+      0,
+      Math.min(1, position)
+    );
+
+    iconHeroPlayer.seekTo(
+      duration * safePosition,
+      true
+    );
+
+    hideHeroVideoThumbnail();
+    iconHeroPlayer.playVideo();
+  }
+
+  /*
+    Sound on / off.
+  */
+
+  function vcToggleMute() {
+    if (
+      !iconHeroPlayerReady ||
+      !iconHeroPlayer
+    ) {
+      return;
+    }
+
+    const muteButton =
+      document.getElementById("vc-mute");
+
+    if (iconHeroPlayer.isMuted()) {
+      iconHeroPlayer.unMute();
+
+      if (muteButton) {
+        muteButton.innerHTML =
+          '<i class="fa-solid fa-volume-high"></i>';
+
+        muteButton.title =
+          "Sound off";
+      }
+    } else {
+      iconHeroPlayer.mute();
+
+      if (muteButton) {
+        muteButton.innerHTML =
+          '<i class="fa-solid fa-volume-xmark"></i>';
+
+        muteButton.title =
+          "Sound on";
+      }
+    }
+  }
+
+  /*
+    Play icon update.
+  */
+
+  function updateHeroPlayButton(isPlaying) {
+    const playButton =
+      document.getElementById("vc-play");
+
+    if (!playButton) {
+      return;
+    }
+
+    playButton.innerHTML = isPlaying
+      ? '<i class="fa-solid fa-pause"></i>'
+      : '<i class="fa-solid fa-play"></i>';
+  }
+
+  /*
+    Progress bar update.
+  */
+
+  function startHeroProgressTimer() {
+    clearInterval(iconHeroProgressTimer);
+
+    iconHeroProgressTimer = setInterval(
+      function () {
+        if (
+          !iconHeroPlayerReady ||
+          !iconHeroPlayer
+        ) {
+          return;
+        }
+
+        const currentTime =
+          iconHeroPlayer.getCurrentTime() || 0;
+
+        const duration =
+          iconHeroPlayer.getDuration() || 0;
+
+        const progressFill =
+          document.getElementById("vc-fill");
+
+        if (
+          progressFill &&
+          duration > 0
+        ) {
+          progressFill.style.width =
+            (
+              currentTime /
+              duration *
+              100
+            ) + "%";
+        }
+      },
+      300
+    );
+  }
+
+  /*
+    API pehle se load ho to player direct create hoga.
+  */
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      if (
+        window.YT &&
+        YT.Player
+      ) {
+        createIconHeroPlayer();
+      }
+    }
+  );
+</script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+
+
+
+<section>
+  
+<div class="container-fluid hero-fluid-container">
+
+  <div class="hero-bottom hero-building">
+
+    <div class="hero-building-image-wrap">
+
+      <img
+        src="img/icon.png"
+        alt="ICON Career Education Building"
+        class="hero-building-image"
+      >
+
+    </div>
+
+    <div class="hero-text">
+
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Admissions Open 2026–27
+      </div>
+
+      <h1>
+        Where Every Student
+        <br>
+        Becomes an <span class="accent">ICON</span>
+      </h1>
+
+      <p>
+        Result-driven coaching for JEE, NEET, Boards &amp; beyond —
+        expert mentors, small batches, and a track record that speaks
+        for itself.
+      </p>
+
+      <div class="hero-ctas">
+
+        <a
+          href="#courses"
+          class="btn btn-primary"
+        >
+          Explore Courses
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a
+          href="#why"
+          class="btn btn-ghost"
+        >
+          Why ICON?
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+
+<section class="courses" id="courses">
+
+  <div class="wrap">
+
+    <div class="courses-heading-row">
+
+      <div class="courses-heading">
+
+        <div class="label">
+          Top 10 Programs
+        </div>
+
+        <h2>
+          Courses students choose
+        </h2>
+
+      </div>
+
+      <a href="#" class="btn btn-ghost">
+        View All
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="courses-marquee">
+
+    <div
+      class="courses-track"
+      id="courseTrack"
+    ></div>
+
+  </div>
+
+</section>
+
+<script>
+  window.addEventListener("load", function () {
+    const courseTrack = document.getElementById("courseTrack");
+
+    if (!courseTrack) {
+      return;
+    }
+
+    const courses = [
+      {
+        title: "JEE Main & Advanced",
+        className: "Class 11–12",
+        duration: "2 Years",
+        bestFor: "Students targeting IITs, NITs and top engineering colleges.",
+        description:
+          "Complete Physics, Chemistry and Mathematics preparation with regular tests, doubt sessions and advanced problem-solving.",
+        image:
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
+      },
+      {
+        title: "NEET UG",
+        className: "Class 11–12",
+        duration: "2 Years",
+        bestFor: "Students preparing for MBBS, BDS and medical entrance exams.",
+        description:
+          "Focused Biology, Physics and Chemistry preparation designed around the latest NEET pattern and medical entrance strategy.",
+        image:
+          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Foundation Program",
+        className: "Class 9–10",
+        duration: "2 Years",
+        bestFor: "Students who want strong basics before JEE, NEET and Boards.",
+        description:
+          "Build strong fundamentals in Mathematics and Science while preparing early for competitive examinations and school boards.",
+        image:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CUET Preparation",
+        className: "Class 12",
+        duration: "1 Year",
+        bestFor: "Students targeting central universities and top undergraduate colleges.",
+        description:
+          "Structured preparation for domain subjects, language tests and general aptitude with regular mock examinations.",
+        image:
+          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CA Foundation",
+        className: "Class 11–12",
+        duration: "1 Year",
+        bestFor: "Commerce students planning to begin their Chartered Accountancy journey.",
+        description:
+          "Concept-focused preparation for Accounting, Economics, Business Laws and Quantitative Aptitude with practice tests.",
+        image:
+          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Board Exam Program",
+        className: "Class 11–12",
+        duration: "1 Year",
+        bestFor: "Students aiming for higher marks in school and board examinations.",
+        description:
+          "Complete board syllabus coverage with chapter-wise practice, answer-writing improvement and regular performance analysis.",
+        image:
+          "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Olympiad Preparation",
+        className: "Class 6–10",
+        duration: "1 Year",
+        bestFor: "Students interested in Olympiads, reasoning and advanced problem-solving.",
+        description:
+          "Develop logical reasoning, scientific thinking and advanced problem-solving skills for national-level Olympiad examinations.",
+        image:
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Banking & SSC",
+        className: "Graduates",
+        duration: "1 Year",
+        bestFor: "Graduates preparing for banking, SSC and government examinations.",
+        description:
+          "Exam-oriented preparation for reasoning, mathematics, English and general awareness with speed-building practice.",
+        image:
+          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Coding for Kids",
+        className: "Class 6–10",
+        duration: "6 Months",
+        bestFor: "Beginners interested in coding, logic building and practical projects.",
+        description:
+          "Learn programming fundamentals, logical thinking and practical project development through student-friendly coding lessons.",
+        image:
+          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Spoken English",
+        className: "All Students",
+        duration: "3 Months",
+        bestFor: "Students who want better speaking confidence and communication skills.",
+        description:
+          "Improve speaking confidence, vocabulary, pronunciation and everyday communication through activity-based learning sessions.",
+        image:
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
+      }
+    ];
+
+    function createCourseCard(course, index) {
+      return `
+        <article class="icon-course-card">
+
+          <div class="course-image">
+
+            <img
+              src="${course.image}"
+              alt="${course.title}"
+              loading="lazy"
+            >
+
+            <span class="course-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3 class="course-title">
+              ${course.title}
+            </h3>
+
+            <span class="course-class">
+              <i class="fa-solid fa-user-graduate"></i>
+              ${course.className}
+            </span>
+
+            <p class="course-description">
+              ${course.description}
+            </p>
+
+            <div class="course-best-for">
+
+              <i class="fa-solid fa-bullseye"></i>
+
+              <div class="best-for-content">
+
+                <span class="best-for-label">
+                  Best for:
+                </span>
+
+                <span>
+                  ${course.bestFor}
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <span class="course-duration">
+                <i class="fa-regular fa-clock"></i>
+                Duration:
+                <strong>${course.duration}</strong>
+              </span>
+
+              <a
+                href="#contact"
+                class="course-arrow"
+                onclick="openBookingForm('${course.title}')"
+                aria-label="Enquire about ${course.title}"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+      `;
+    }
+
+    const courseCards = courses
+      .map(createCourseCard)
+      .join("");
+
+    courseTrack.innerHTML =
+      courseCards + courseCards;
+  });
+</script>
+
+<script>
+  /*
+    Tumhara main.js bhi courseTrack mein cards add karta hai.
+    Ye code page load hone ke baad sirf Courses cards ko
+    requested new format mein replace karega.
+  */
+
+  window.addEventListener("load", function () {
+    const courseTrack =
+      document.getElementById("courseTrack");
+
+    if (!courseTrack) {
+      return;
+    }
+
+    const courses = [
+      {
+        title: "JEE Main & Advanced",
+        className: "Class 11–12",
+        duration: "2 Years",
+        description:
+          "Complete Physics, Chemistry and Mathematics preparation with regular tests, doubt sessions and advanced problem-solving.",
+        image:
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
+      },
+      {
+        title: "NEET UG",
+        className: "Class 11–12",
+        duration: "2 Years",
+        description:
+          "Focused Biology, Physics and Chemistry preparation designed around the latest NEET pattern and medical entrance strategy.",
+        image:
+          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Foundation Program",
+        className: "Class 9–10",
+        duration: "2 Years",
+        description:
+          "Build strong fundamentals in Mathematics and Science while preparing early for competitive examinations and school boards.",
+        image:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CUET Preparation",
+        className: "Class 12",
+        duration: "1 Year",
+        description:
+          "Structured preparation for domain subjects, language tests and general aptitude with regular mock examinations.",
+        image:
+          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CA Foundation",
+        className: "Class 11–12",
+        duration: "1 Year",
+        description:
+          "Concept-focused preparation for Accounting, Economics, Business Laws and Quantitative Aptitude with practice tests.",
+        image:
+          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Board Exam Program",
+        className: "Class 11–12",
+        duration: "1 Year",
+        description:
+          "Complete board syllabus coverage with chapter-wise practice, answer-writing improvement and regular performance analysis.",
+        image:
+          "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Olympiad Preparation",
+        className: "Class 6–10",
+        duration: "1 Year",
+        description:
+          "Develop logical reasoning, scientific thinking and advanced problem-solving skills for national-level Olympiad examinations.",
+        image:
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Banking & SSC",
+        className: "Graduates",
+        duration: "1 Year",
+        description:
+          "Exam-oriented preparation for reasoning, mathematics, English and general awareness with speed-building practice.",
+        image:
+          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Coding for Kids",
+        className: "Class 6–10",
+        duration: "6 Months",
+        description:
+          "Learn programming fundamentals, logical thinking and practical project development through student-friendly coding lessons.",
+        image:
+          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Spoken English",
+        className: "All Students",
+        duration: "3 Months",
+        description:
+          "Improve speaking confidence, vocabulary, pronunciation and everyday communication through activity-based learning sessions.",
+        image:
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
+      }
+    ];
+
+    function createCourseCard(course, index) {
+      return `
+        <article class="icon-course-card">
+
+          <div class="course-image">
+
+            <img
+              src="${course.image}"
+              alt="${course.title}"
+              loading="lazy"
+            >
+
+            <span class="course-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3 class="course-title">
+              ${course.title}
+            </h3>
+
+            <p class="course-description">
+              ${course.description}
+            </p>
+
+            <span class="course-class">
+              <i class="fa-solid fa-user-graduate"></i>
+              ${course.className}
+            </span>
+
+            <div class="course-bottom">
+
+              <span class="course-duration">
+                <i class="fa-regular fa-clock"></i>
+                Duration:
+                <strong>${course.duration}</strong>
+              </span>
+
+              <a
+                href="#contact"
+                class="course-arrow"
+                onclick="openBookingForm('${course.title}')"
+                aria-label="Enquire about ${course.title}"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+      `;
+    }
+
+    /*
+      Cards ko twice repeat kiya hai taaki marquee
+      continuously smooth chale.
+    */
+
+    const courseCards = courses
+      .map(createCourseCard)
+      .join("");
+
+    courseTrack.innerHTML =
+      courseCards + courseCards;
+  });
+</script>
+
+<!-- Media -->
+<section class="media-sec" id="media">
+
+  <div class="wrap">
+
+    <div class="sec-row reveal">
+
+      <div class="sec-head" style="margin-bottom: 0;">
+
+        <div class="label">
+          Press &amp; Coverage
+        </div>
+
+        <h2>
+          ICON in the Media
+        </h2>
+
+      </div>
+
+      <a href="media.html" class="btn btn-primary">
+        View All
+
+        <svg
+          viewBox="0 0 24 24"
+          style="
+            width: 14px;
+            height: 14px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          "
+        >
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+
+      </a>
+
+    </div>
+
+  </div>
+
+  <div
+    class="mq-wrap"
+    style="margin-top: 28px;"
+  >
+    <div
+      class="mq-track"
+      id="mediaTrack"
+      style="
+        gap: 18px;
+        animation: mq-rtl 42s linear infinite;
+        display: flex;
+      "
+    >
+      <!-- Mixed Images: Unsplash aur Pinterest (Set 1) -->
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/83/b3/4f/83b34f48988a129cad4ac41d1777a197.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/78/17/bd/7817bdb86a8ee46656e8d51eaba59487.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/3f/8c/e1/3f8ce169b5f58daa956a00d2444b705c.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/c7/e8/e4/c7e8e482d8fda880f6a0e55da9662f19.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+
+      <!-- Mixed Images: Duplicated for Marquee Effect (Set 2) -->
+      <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/83/b3/4f/83b34f48988a129cad4ac41d1777a197.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/78/17/bd/7817bdb86a8ee46656e8d51eaba59487.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/3f/8c/e1/3f8ce169b5f58daa956a00d2444b705c.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://i.pinimg.com/736x/c7/e8/e4/c7e8e482d8fda880f6a0e55da9662f19.jpg" alt="Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+      
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Indian Student" style="height: 250px; border-radius: 12px; object-fit: cover;">
+    </div>
+  </div>
+
+</section>
+
+
+
+
+<script>
+  window.addEventListener("load", function () {
+    const courseTrack = document.getElementById("courseTrack");
+
+    if (!courseTrack) {
+      return;
+    }
+
+    const courses = [
+      {
+        title: "JEE Main & Advanced",
+        className: "Class 11–12",
+        duration: "2 Years",
+        bestFor: "Students targeting IITs, NITs and top engineering colleges.",
+        description:
+          "Complete Physics, Chemistry and Mathematics preparation with regular tests, doubt sessions and advanced problem-solving.",
+        image:
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
+      },
+      {
+        title: "NEET UG",
+        className: "Class 11–12",
+        duration: "2 Years",
+        bestFor: "Students preparing for MBBS, BDS and medical entrance exams.",
+        description:
+          "Focused Biology, Physics and Chemistry preparation designed around the latest NEET pattern and medical entrance strategy.",
+        image:
+          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Foundation Program",
+        className: "Class 9–10",
+        duration: "2 Years",
+        bestFor: "Students who want strong basics before JEE, NEET and Boards.",
+        description:
+          "Build strong fundamentals in Mathematics and Science while preparing early for competitive examinations and school boards.",
+        image:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CUET Preparation",
+        className: "Class 12",
+        duration: "1 Year",
+        bestFor: "Students targeting central universities and top undergraduate colleges.",
+        description:
+          "Structured preparation for domain subjects, language tests and general aptitude with regular mock examinations.",
+        image:
+          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
+      },
+      {
+        title: "CA Foundation",
+        className: "Class 11–12",
+        duration: "1 Year",
+        bestFor: "Commerce students planning to begin their Chartered Accountancy journey.",
+        description:
+          "Concept-focused preparation for Accounting, Economics, Business Laws and Quantitative Aptitude with practice tests.",
+        image:
+          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Board Exam Program",
+        className: "Class 11–12",
+        duration: "1 Year",
+        bestFor: "Students aiming for higher marks in school and board examinations.",
+        description:
+          "Complete board syllabus coverage with chapter-wise practice, answer-writing improvement and regular performance analysis.",
+        image:
+          "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Olympiad Preparation",
+        className: "Class 6–10",
+        duration: "1 Year",
+        bestFor: "Students interested in Olympiads, reasoning and advanced problem-solving.",
+        description:
+          "Develop logical reasoning, scientific thinking and advanced problem-solving skills for national-level Olympiad examinations.",
+        image:
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Banking & SSC",
+        className: "Graduates",
+        duration: "1 Year",
+        bestFor: "Graduates preparing for banking, SSC and government examinations.",
+        description:
+          "Exam-oriented preparation for reasoning, mathematics, English and general awareness with speed-building practice.",
+        image:
+          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Coding for Kids",
+        className: "Class 6–10",
+        duration: "6 Months",
+        bestFor: "Beginners interested in coding, logic building and practical projects.",
+        description:
+          "Learn programming fundamentals, logical thinking and practical project development through student-friendly coding lessons.",
+        image:
+          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=450&fit=crop"
+      },
+      {
+        title: "Spoken English",
+        className: "All Students",
+        duration: "3 Months",
+        bestFor: "Students who want better speaking confidence and communication skills.",
+        description:
+          "Improve speaking confidence, vocabulary, pronunciation and everyday communication through activity-based learning sessions.",
+        image:
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
+      }
+    ];
+
+    function createCourseCard(course, index) {
+      return `
+        <article class="icon-course-card">
+
+          <div class="course-image">
+
+            <img
+              src="${course.image}"
+              alt="${course.title}"
+              loading="lazy"
+            >
+
+            <span class="course-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+          </div>
+
+          <div class="course-content">
+
+            <h3 class="course-title">
+              ${course.title}
+            </h3>
+
+            <span class="course-class">
+              <i class="fa-solid fa-user-graduate"></i>
+              ${course.className}
+            </span>
+
+            <p class="course-description">
+              ${course.description}
+            </p>
+
+            <div class="course-best-for">
+
+              <i class="fa-solid fa-bullseye"></i>
+
+              <div class="best-for-content">
+
+                <span class="best-for-label">
+                  Best for:
+                </span>
+
+                <span>
+                  ${course.bestFor}
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="course-bottom">
+
+              <span class="course-duration">
+                <i class="fa-regular fa-clock"></i>
+                Duration:
+                <strong>${course.duration}</strong>
+              </span>
+
+              <a
+                href="#contact"
+                class="course-arrow"
+                onclick="openBookingForm('${course.title}')"
+                aria-label="Enquire about ${course.title}"
+              >
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+      `;
+    }
+
+    const courseCards = courses
+      .map(createCourseCard)
+      .join("");
+
+    courseTrack.innerHTML =
+      courseCards + courseCards;
+  });
+</script>
+
+
+<!-- ── Why ── -->
+<section class="why" id="why">
+  <div class="wrap">
+
+    <!-- Centered heading -->
+    <div class="why-head reveal">
+      <div class="label">The ICON Edge</div>
+      <h2>Why students <span class="accent">choose</span> ICON</h2>
+      <p>Every decision — batch size, faculty, curriculum, scheduling — is engineered around one goal: your result.</p>
+    </div>
+
+    <!-- 3-col image card grid -->
+    <div class="why-grid reveal reveal-delay-1">
+
+      <!-- Col 1: tall featured card -->
+      <div class="why-card tall">
+        <div class="why-card-img">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=600&fit=crop" alt="Result-Oriented Curriculum" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-bullseye"></i></div>
+          <span class="why-card-stat">98%</span>
+        </div>
+        <div class="why-card-body">
+          <h4>Result-Oriented Curriculum</h4>
+          <p>Every chapter mapped backward from the exam. No filler — only what gets marks.</p>
+        </div>
+      </div>
+
+      <!-- Col 2: two stacked cards -->
+      <div class="why-card">
+        <div class="why-card-img">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&h=300&fit=crop" alt="Small Batches" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-users"></i></div>
+          <span class="why-card-stat">≤ 30</span>
+        </div>
+        <div class="why-card-body">
+          <h4>Small Batch Sizes</h4>
+          <p>Capped at 30 per batch — every mentor knows every student personally.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-img">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=300&fit=crop" alt="Expert Faculty" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-graduation-cap"></i></div>
+          <span class="why-card-stat">8+ yrs</span>
+        </div>
+        <div class="why-card-body">
+          <h4>IIT · AIIMS · NIT Faculty</h4>
+          <p>Exam strategists — not just subject teachers, but toppers-shapers.</p>
+        </div>
+      </div>
+
+      <!-- Col 3: two stacked cards -->
+      <div class="why-card">
+        <div class="why-card-img">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=500&h=300&fit=crop" alt="Doubt Sessions" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-comment-dots"></i></div>
+          <span class="why-card-stat">Daily</span>
+        </div>
+        <div class="why-card-body">
+          <h4>Daily Doubt-Clearing Desk</h4>
+          <p>One-on-one sessions every day — no question is too small.</p>
+        </div>
+      </div>
+
+      <div class="why-card">
+        <div class="why-card-img">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500&h=300&fit=crop" alt="Scholarship" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-award"></i></div>
+          <span class="why-card-stat">90%</span>
+        </div>
+        <div class="why-card-body">
+          <h4>Scholarship up to 90%</h4>
+          <p>Merit-based fee waivers — financial barriers shouldn't stop talent.</p>
+        </div>
+      </div>
+
+      <!-- Spans full width at bottom -->
+      <div class="why-card wide">
+        <div class="why-card-img" style="height:200px;">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&h=400&fit=crop" alt="Hybrid Learning" loading="lazy">
+          <div class="why-card-ic"><i class="fa-solid fa-wifi"></i></div>
+          <span class="why-card-stat">Live</span>
+        </div>
+        <div class="why-card-body">
+          <h4>Hybrid — Centre or Online</h4>
+          <p>Same faculty, same quality — attend live or stream from anywhere, your choice every day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Mentors -->
+<section class="mentors" id="mentors">
+
+  <div class="wrap">
+
+    <div class="mentor-section-top reveal">
+
+      <div class="mentor-heading-area">
+
+        <div class="mentor-mini-label">
+          Meet the Faculty
+        </div>
+
+        <h2>
+          Learn from mentors who
+          <span>shape results</span>
+        </h2>
+
+        <p>
+          Experienced subject experts, exam strategists and dedicated
+          educators committed to helping every student perform at their best.
+        </p>
+
+      </div>
+
+      <a
+        href="#contact"
+        onclick="openBookingForm('Personal Counselling')"
+        class="mentor-book-btn"
+      >
+        <i class="fa-solid fa-calendar-check"></i>
+        Book a Session
+      </a>
+
+    </div>
+
+    <div class="mentor-slider-shell reveal reveal-delay-1">
+
+      <div class="mentor-outer" id="mentorOuter">
+
+        <div class="mentor-grid" id="mentorGrid">
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Dr. Ashwin Rathore"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                12 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Dr. Ashwin Rathore
+                </h4>
+
+                <div class="mentor-subj">
+                  Physics
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                Ex-IIT faculty specializing in JEE Advanced concepts,
+                numerical problem-solving and exam strategy.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-bullseye"></i>
+                  JEE Advanced
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Dr. Ashwin Rathore')"
+                  aria-label="Book session with Dr. Ashwin Rathore"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Dr. Meenal Kapoor"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                10 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Dr. Meenal Kapoor
+                </h4>
+
+                <div class="mentor-subj">
+                  Biology
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                AIIMS alumna who has mentored more than 400 NEET selections
+                through concept-focused preparation.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-heart-pulse"></i>
+                  NEET UG
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Dr. Meenal Kapoor')"
+                  aria-label="Book session with Dr. Meenal Kapoor"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Rohan Vyas"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                9 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Rohan Vyas
+                </h4>
+
+                <div class="mentor-subj">
+                  Mathematics
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                Known for simplifying calculus, algebra and coordinate
+                geometry using practical problem-solving methods.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-square-root-variable"></i>
+                  Calculus Expert
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Rohan Vyas')"
+                  aria-label="Book session with Rohan Vyas"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Priya Sharma"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                7 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Priya Sharma
+                </h4>
+
+                <div class="mentor-subj">
+                  Chemistry
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                Concept-first educator who uses demonstrations and structured
+                practice to make chemistry easier.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-flask"></i>
+                  Organic Chemistry
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Priya Sharma')"
+                  aria-label="Book session with Priya Sharma"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Karan Mehta"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                8 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Karan Mehta
+                </h4>
+
+                <div class="mentor-subj">
+                  English &amp; GK
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                Builds communication, vocabulary and competitive-exam
+                awareness alongside strong academic foundations.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-comments"></i>
+                  Communication
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Karan Mehta')"
+                  aria-label="Book session with Karan Mehta"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="mentor-card">
+
+            <div class="mentor-photo-wrap">
+
+              <div
+                class="mentor-photo"
+                role="img"
+                aria-label="Sonal Deshmukh"
+                style="
+                  background-image:
+                  url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=700&h=800&fit=crop');
+                "
+              ></div>
+
+              <div class="mentor-experience">
+                <i class="fa-solid fa-medal"></i>
+                6 Years
+              </div>
+
+              <div class="mentor-image-info">
+
+                <h4>
+                  Sonal Deshmukh
+                </h4>
+
+                <div class="mentor-subj">
+                  Computer Science
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="mentor-card-content">
+
+              <p>
+                Leads the coding track from core programming fundamentals
+                to logic building and competitive coding.
+              </p>
+
+              <div class="mentor-card-bottom">
+
+                <span class="mentor-speciality">
+                  <i class="fa-solid fa-code"></i>
+                  Coding &amp; Logic
+                </span>
+
+                <a
+                  href="#contact"
+                  class="mentor-profile-btn"
+                  onclick="openBookingForm('Session with Sonal Deshmukh')"
+                  aria-label="Book session with Sonal Deshmukh"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+      <div class="mentor-nav">
+
+        <button
+          class="mnav-btn"
+          id="mentorPrev"
+          type="button"
+          aria-label="Previous mentors"
+        >
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="mnav-dots" id="mentorDots"></div>
+
+        <button
+          class="mnav-btn"
+          id="mentorNext"
+          type="button"
+          aria-label="Next mentors"
+        >
+          <svg viewBox="0 0 24 24">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mentorOuter = document.getElementById("mentorOuter");
+  const mentorGrid = document.getElementById("mentorGrid");
+
+  const mentorCards = Array.from(
+    document.querySelectorAll("#mentorGrid .mentor-card")
+  );
+
+  const mentorPrev = document.getElementById("mentorPrev");
+  const mentorNext = document.getElementById("mentorNext");
+  const mentorDots = document.getElementById("mentorDots");
+
+  if (
+    !mentorOuter ||
+    !mentorGrid ||
+    !mentorPrev ||
+    !mentorNext ||
+    !mentorDots ||
+    mentorCards.length === 0
+  ) {
+    return;
+  }
+
+  let currentMentorIndex = 0;
+  let cardsPerView = getCardsPerView();
+  let totalSlides = getTotalSlides();
+
+  function getCardsPerView() {
+    if (window.innerWidth <= 580) {
+      return 1;
+    }
+
+    if (window.innerWidth <= 850) {
+      return 2;
+    }
+
+    if (window.innerWidth <= 1100) {
+      return 3;
+    }
+
+    return 4;
+  }
+
+  function getTotalSlides() {
+    return Math.max(
+      1,
+      mentorCards.length - cardsPerView + 1
+    );
+  }
+
+  function createMentorDots() {
+    mentorDots.innerHTML = "";
+
+    for (
+      let index = 0;
+      index < totalSlides;
+      index++
+    ) {
+      const dot = document.createElement("button");
+
+      dot.type = "button";
+      dot.className = "mnav-dot";
+
+      dot.setAttribute(
+        "aria-label",
+        `Go to mentor slide ${index + 1}`
+      );
+
+      dot.addEventListener("click", function () {
+        currentMentorIndex = index;
+        updateMentorSlider();
+      });
+
+      mentorDots.appendChild(dot);
+    }
+  }
+
+  function getCardWidth() {
+    const firstCard = mentorCards[0];
+
+    if (!firstCard) {
+      return 0;
+    }
+
+    const gridStyles =
+      window.getComputedStyle(mentorGrid);
+
+    const gap =
+      parseFloat(gridStyles.columnGap) || 0;
+
+    return (
+      firstCard.getBoundingClientRect().width +
+      gap
+    );
+  }
+
+  function updateMentorSlider() {
+    const cardWidth = getCardWidth();
+
+    mentorGrid.style.transform =
+      `translateX(-${currentMentorIndex * cardWidth}px)`;
+
+    const dots =
+      mentorDots.querySelectorAll(".mnav-dot");
+
+    dots.forEach(function (dot, index) {
+      dot.classList.toggle(
+        "active",
+        index === currentMentorIndex
+      );
+    });
+
+    mentorPrev.disabled =
+      currentMentorIndex === 0;
+
+    mentorNext.disabled =
+      currentMentorIndex >= totalSlides - 1;
+  }
+
+  mentorPrev.addEventListener("click", function () {
+    if (currentMentorIndex > 0) {
+      currentMentorIndex--;
+      updateMentorSlider();
+    }
+  });
+
+  mentorNext.addEventListener("click", function () {
+    if (currentMentorIndex < totalSlides - 1) {
+      currentMentorIndex++;
+      updateMentorSlider();
+    }
+  });
+
+  let resizeTimer;
+
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(function () {
+      cardsPerView = getCardsPerView();
+      totalSlides = getTotalSlides();
+
+      if (currentMentorIndex > totalSlides - 1) {
+        currentMentorIndex =
+          totalSlides - 1;
+      }
+
+      createMentorDots();
+      updateMentorSlider();
+    }, 150);
+  });
+
+  createMentorDots();
+  updateMentorSlider();
+
+  // ── Drag / swipe support ──
+  let dragStartX = 0;
+  let dragStartTranslate = 0;
+  let isDragging = false;
+  const DRAG_THRESHOLD = 50; // px needed to trigger a slide change
+
+  function getCurrentTranslate() {
+    return currentMentorIndex * getCardWidth();
+  }
+
+  // Mouse drag
+  mentorOuter.addEventListener("mousedown", function (e) {
+    isDragging = true;
+    dragStartX = e.clientX;
+    dragStartTranslate = getCurrentTranslate();
+    mentorGrid.style.transition = "none";
+    mentorOuter.style.cursor = "grabbing";
+    e.preventDefault();
+  });
+
+  window.addEventListener("mousemove", function (e) {
+    if (!isDragging) return;
+    const delta = e.clientX - dragStartX;
+    const newTranslate = dragStartTranslate - delta;
+    mentorGrid.style.transform = `translateX(-${newTranslate}px)`;
+  });
+
+  window.addEventListener("mouseup", function (e) {
+    if (!isDragging) return;
+    isDragging = false;
+    mentorOuter.style.cursor = "grab";
+    const delta = e.clientX - dragStartX;
+    mentorGrid.style.transition = "";
+    if (delta < -DRAG_THRESHOLD && currentMentorIndex < totalSlides - 1) {
+      currentMentorIndex++;
+    } else if (delta > DRAG_THRESHOLD && currentMentorIndex > 0) {
+      currentMentorIndex--;
+    }
+    updateMentorSlider();
+  });
+
+  // Touch swipe
+  mentorOuter.addEventListener("touchstart", function (e) {
+    dragStartX = e.touches[0].clientX;
+    dragStartTranslate = getCurrentTranslate();
+    mentorGrid.style.transition = "none";
+  }, { passive: true });
+
+  mentorOuter.addEventListener("touchmove", function (e) {
+    const delta = e.touches[0].clientX - dragStartX;
+    const newTranslate = dragStartTranslate - delta;
+    mentorGrid.style.transform = `translateX(-${newTranslate}px)`;
+  }, { passive: true });
+
+  mentorOuter.addEventListener("touchend", function (e) {
+    const delta = e.changedTouches[0].clientX - dragStartX;
+    mentorGrid.style.transition = "";
+    if (delta < -DRAG_THRESHOLD && currentMentorIndex < totalSlides - 1) {
+      currentMentorIndex++;
+    } else if (delta > DRAG_THRESHOLD && currentMentorIndex > 0) {
+      currentMentorIndex--;
+    }
+    updateMentorSlider();
+  }, { passive: true });
+
+  // Show grab cursor to hint draggability
+  mentorOuter.style.cursor = "grab";
+});
+</script>
+
+
+<!-- ── Testimonials ── -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="testi-head">
+      <div class="label">Student Voices</div>
+      <h2>What our students say</h2>
+      <p>Real results, real stories — from students who made it.</p>
+    </div>
+
+    <div class="testi-layout">
+
+      <!-- LEFT: vertical reel of student videos -->
+      <div class="testi-reels" id="testiReels">
+        <div class="reel-track" id="reelTrack">
+          <!-- Reel cards injected by JS -->
+        </div>
+        <!-- Reel nav -->
+        <div class="reel-nav">
+          <button class="reel-btn" id="reelPrev" aria-label="Previous"><i class="fa-solid fa-chevron-up"></i></button>
+          <button class="reel-btn" id="reelNext" aria-label="Next"><i class="fa-solid fa-chevron-down"></i></button>
+        </div>
+      </div>
+
+      <!-- RIGHT: two columns scrolling opposite directions -->
+      <div class="testi-cols">
+        <div class="testi-col testi-col-up">
+          <div class="testi-col-track" id="testiColA"></div>
+        </div>
+        <div class="testi-col testi-col-down">
+          <div class="testi-col-track" id="testiColB"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-sec" id="contact">
+  <div class="wrap">
+    <div class="contact-layout">
+
+      <div class="contact-info reveal">
+        <div class="label">Get in Touch</div>
+        <h2>Let's talk about your future</h2>
+        <p>Fill in the form and we'll send your enquiry directly to our WhatsApp. Our counsellor will get back to you within 2 hours.</p>
+      </div>
+
+      <div class="contact-form reveal reveal-delay-2">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name</label>
+            <input type="text" id="cf-name" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Mobile Number</label>
+            <input type="tel" id="cf-phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-course">Course Interested In</label>
+            <select id="cf-course">
+              <option value="">Select a course</option>
+              <option>JEE Main &amp; Advanced</option>
+              <option>NEET UG</option>
+              <option>Foundation 9–10</option>
+              <option>CUET Prep</option>
+              <option>CA Foundation</option>
+              <option>Class 11–12 Boards</option>
+              <option>Olympiad Prep</option>
+              <option>Banking &amp; SSC</option>
+              <option>Coding for Kids</option>
+              <option>Spoken English</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-class">Current Class</label>
+            <select id="cf-class">
+              <option value="">Select class</option>
+              <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+              <option>Class 9</option><option>Class 10</option>
+              <option>Class 11</option><option>Class 12</option>
+              <option>Passed 12th</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg">Message (optional)</label>
+          <textarea id="cf-msg" placeholder="Any specific queries or doubts..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i>
+          Send on WhatsApp
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/919800000000" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <span class="wa-tooltip">Chat with us</span>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ── Footer ── -->
+<footer id="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="logo.png" alt="ICON Institute" class="logo-img">
+      <p>Building future achievers through result-driven coaching, expert mentorship and a culture of discipline.</p>
+      <div class="fsoc">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div>
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#why">Why ICON</a></li>
+        <li><a href="#mentors">Mentors</a></li>
+        <li><a href="#testimonials">Results</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Courses</h5>
+      <ul>
+        <li><a href="#">JEE Main &amp; Advanced</a></li>
+        <li><a href="#">NEET UG</a></li>
+        <li><a href="#">Foundation 9–10</a></li>
+        <li><a href="#">CUET</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li>ICON Campus, Pur Road, Bhilwara, Rajasthan</li>
+        <li>+91 98XXX XXXXX</li>
+        <li>admissions@iconinstitute.in</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div>© 2026 ICON Institute. All rights reserved. Manage By <b style="color:#6d4802;font-weight:600;">HUKUMSA</b></div>
+    <div><a href="#">Privacy Policy</a> · <a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<script>
+  /* =====================================================
+     REFRESH PAR PAGE HAMESHA TOP SE OPEN HOGA
+     ===================================================== */
+
+  (function () {
+
+    /* Browser ki automatic scroll restoration band */
+
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+
+    const navigationEntry =
+      performance.getEntriesByType("navigation")[0];
+
+    const pageIsReloaded =
+      navigationEntry &&
+      navigationEntry.type === "reload";
+
+    function movePageToTop() {
+      const htmlElement =
+        document.documentElement;
+
+      const oldScrollBehavior =
+        htmlElement.style.scrollBehavior;
+
+      /* Smooth scrolling ko temporary band rakho */
+
+      htmlElement.style.scrollBehavior = "auto";
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "auto"
+      });
+
+      document.body.scrollTop = 0;
+      htmlElement.scrollTop = 0;
+
+      setTimeout(function () {
+        htmlElement.style.scrollBehavior =
+          oldScrollBehavior;
+      }, 100);
+    }
+
+    /*
+      Refresh ke time URL mein #contact ya #footer ho
+      to use remove kar dega.
+    */
+
+    if (pageIsReloaded) {
+
+      if (window.location.hash) {
+        history.replaceState(
+          null,
+          "",
+          window.location.pathname +
+          window.location.search
+        );
+      }
+
+      movePageToTop();
+
+      document.addEventListener(
+        "DOMContentLoaded",
+        movePageToTop
+      );
+
+      window.addEventListener(
+        "load",
+        function () {
+          movePageToTop();
+
+          setTimeout(movePageToTop, 50);
+          setTimeout(movePageToTop, 250);
+        }
+      );
+
+      window.addEventListener(
+        "pageshow",
+        function () {
+          movePageToTop();
+        }
+      );
+
+    }
+
+  })();
+</script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
