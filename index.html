@@ -103,18 +103,6 @@
   .hero-fluid-container .hero-bottom.hero-building {
     min-height: 440px;
     padding: 58px 40px;
-
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.99) 0%,
-        rgba(255, 255, 255, 0.94) 44%,
-        rgba(255, 255, 255, 0.62) 72%,
-        rgba(255, 255, 255, 0.18) 100%
-      ),
-      url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=88");
-
-    background-position: 58% center;
   }
 
   .hero-fluid-container .hero-bottom.hero-building .hero-text {
@@ -122,10 +110,10 @@
   }
 }
 
-/* ── Mobile ≤480px: text on top, building image below ── */
+/* ── Mobile ≤480px: flex column, image on top, text below ── */
 @media screen and (max-width: 480px) {
   .hero-fluid-container {
-    margin-top: 24px; /* keeps breathing room from the hero section above */
+    margin-top: 24px;
   }
 
   /* Section becomes a vertical flex column */
@@ -141,14 +129,40 @@
     gap: 0;
   }
 
-  /* Text block: sits at the TOP, full width, with breathing room from the section above */
+  /* Building image block: on top */
+  .hero-building-image-wrap {
+    position: relative !important;
+    width: 100% !important;
+    height: 230px !important;
+    right: auto !important;
+    bottom: auto !important;
+    top: auto !important;
+    left: auto !important;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-building-image {
+    display: block;
+    position: relative !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    max-width: 100%;
+    margin: 0;
+    mix-blend-mode: normal;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Text block: sits below the image */
   .hero-fluid-container .hero-bottom.hero-building .hero-text {
-    order: 1;
     position: relative !important;
     z-index: 2;
     max-width: 100% !important;
     width: 100% !important;
-    padding: 32px 18px 24px;
+    padding: 28px 18px 30px;
     background: #fff;
   }
 
@@ -157,7 +171,7 @@
   }
 
   .hero-fluid-container .hero-bottom.hero-building .hero-text h1 {
-    font-size: clamp(26px, 7.5vw, 36px);
+    font-size: clamp(28px, 7.5vw, 36px);
     line-height: 1.15;
   }
 
@@ -170,36 +184,6 @@
   .hero-fluid-container .hero-bottom.hero-building .hero-ctas .btn {
     width: 100%;
     justify-content: center;
-  }
-
-  /* Building image block: goes BELOW the text */
-  .hero-building-image-wrap {
-    order: 2;
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    background: none !important;
-    min-height: unset !important;
-    padding: 0;
-    margin: 0 auto;
-    z-index: 1;
-  }
-
-  /* icon.png — perfectly centered, original image */
-  .hero-building-image {
-    display: block;
-    position: relative !important;
-    width: auto;
-    max-width: 90%;
-    height: auto;
-    margin: 0 auto;
-    mix-blend-mode: normal;
-    object-fit: contain;
   }
 }
 
@@ -748,7 +732,8 @@
 
     <div class="slider" id="heroSlider">
 
-      <div class="slide active" style="background-image: url('https://i.pinimg.com/736x/39/76/df/3976df2e5e5f263b689f2b2481ae488c.jpg');">
+      <div class="slide active">
+        <img src="img/10X16_3.jpg.jpeg" alt="Campus Life">
 
         <div class="slide-caption">
 
@@ -764,7 +749,8 @@
 
       </div>
 
-      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/10/73/5a/10735a1fba9d6b4b17a922141e063fe6.jpg');">
+      <div class="slide">
+        <img src="img/10X16_2.jpg.jpeg" alt="">
 
         <div class="slide-caption">
 
@@ -780,7 +766,9 @@
 
       </div>
 
-      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/52/ee/9b/52ee9ba6cd61aa5abcfbed87fc5205d7.jpg');">
+      <div class="slide">
+
+        <img src="img/10X16.jpg.jpeg" alt="Results Day" style="width: 100%; height: 100%; object-fit: cover;"> 
 
         <div class="slide-caption">
 
@@ -796,7 +784,8 @@
 
       </div>
 
-      <div class="slide" style="background-image: url('https://i.pinimg.com/736x/83/b3/4f/83b34f48988a129cad4ac41d1777a197.jpg');">
+      <div class="slide">
+        <img src="img/10X16 Header.png" alt="Campus Life" style="width: 100%; height: 100%; object-fit: cover;">
 
         <div class="slide-caption">
 
@@ -2221,417 +2210,905 @@
 
     </div>
 
-    <div class="mentor-slider-shell reveal reveal-delay-1">
+   <div class="mentor-slider-shell reveal reveal-delay-1">
 
-      <div class="mentor-outer" id="mentorOuter">
+  <div class="mentor-outer" id="mentorOuter">
 
-        <div class="mentor-grid" id="mentorGrid">
+    <div class="mentor-grid" id="mentorGrid">
 
-          <article class="mentor-card">
+      <!-- ANIL CHOUDHARY -->
 
-            <div class="mentor-photo-wrap">
+      <article class="mentor-card">
 
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Dr. Ashwin Rathore"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&h=800&fit=crop');
-                "
-              ></div>
+        <div class="mentor-photo-wrap">
 
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                12 Years
-              </div>
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Anil Choudhary"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 141929.png');
+            "
+          ></div>
 
-              <div class="mentor-image-info">
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            12 Years
+          </div>
 
-                <h4>
-                  Dr. Ashwin Rathore
-                </h4>
+          <div class="mentor-image-info">
 
-                <div class="mentor-subj">
-                  Physics
-                </div>
+            <h4>
+              Anil Choudhary
+            </h4>
 
-              </div>
-
+            <div class="mentor-subj">
+              Chief Mentor
             </div>
 
-            <div class="mentor-card-content">
-
-              <p>
-                Ex-IIT faculty specializing in JEE Advanced concepts,
-                numerical problem-solving and exam strategy.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-bullseye"></i>
-                  JEE Advanced
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Dr. Ashwin Rathore')"
-                  aria-label="Book session with Dr. Ashwin Rathore"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="mentor-card">
-
-            <div class="mentor-photo-wrap">
-
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Dr. Meenal Kapoor"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=700&h=800&fit=crop');
-                "
-              ></div>
-
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                10 Years
-              </div>
-
-              <div class="mentor-image-info">
-
-                <h4>
-                  Dr. Meenal Kapoor
-                </h4>
-
-                <div class="mentor-subj">
-                  Biology
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="mentor-card-content">
-
-              <p>
-                AIIMS alumna who has mentored more than 400 NEET selections
-                through concept-focused preparation.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-heart-pulse"></i>
-                  NEET UG
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Dr. Meenal Kapoor')"
-                  aria-label="Book session with Dr. Meenal Kapoor"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="mentor-card">
-
-            <div class="mentor-photo-wrap">
-
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Rohan Vyas"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=700&h=800&fit=crop');
-                "
-              ></div>
-
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                9 Years
-              </div>
-
-              <div class="mentor-image-info">
-
-                <h4>
-                  Rohan Vyas
-                </h4>
-
-                <div class="mentor-subj">
-                  Mathematics
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="mentor-card-content">
-
-              <p>
-                Known for simplifying calculus, algebra and coordinate
-                geometry using practical problem-solving methods.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-square-root-variable"></i>
-                  Calculus Expert
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Rohan Vyas')"
-                  aria-label="Book session with Rohan Vyas"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="mentor-card">
-
-            <div class="mentor-photo-wrap">
-
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Priya Sharma"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&h=800&fit=crop');
-                "
-              ></div>
-
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                7 Years
-              </div>
-
-              <div class="mentor-image-info">
-
-                <h4>
-                  Priya Sharma
-                </h4>
-
-                <div class="mentor-subj">
-                  Chemistry
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="mentor-card-content">
-
-              <p>
-                Concept-first educator who uses demonstrations and structured
-                practice to make chemistry easier.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-flask"></i>
-                  Organic Chemistry
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Priya Sharma')"
-                  aria-label="Book session with Priya Sharma"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="mentor-card">
-
-            <div class="mentor-photo-wrap">
-
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Karan Mehta"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&h=800&fit=crop');
-                "
-              ></div>
-
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                8 Years
-              </div>
-
-              <div class="mentor-image-info">
-
-                <h4>
-                  Karan Mehta
-                </h4>
-
-                <div class="mentor-subj">
-                  English &amp; GK
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="mentor-card-content">
-
-              <p>
-                Builds communication, vocabulary and competitive-exam
-                awareness alongside strong academic foundations.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-comments"></i>
-                  Communication
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Karan Mehta')"
-                  aria-label="Book session with Karan Mehta"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
-
-          <article class="mentor-card">
-
-            <div class="mentor-photo-wrap">
-
-              <div
-                class="mentor-photo"
-                role="img"
-                aria-label="Sonal Deshmukh"
-                style="
-                  background-image:
-                  url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=700&h=800&fit=crop');
-                "
-              ></div>
-
-              <div class="mentor-experience">
-                <i class="fa-solid fa-medal"></i>
-                6 Years
-              </div>
-
-              <div class="mentor-image-info">
-
-                <h4>
-                  Sonal Deshmukh
-                </h4>
-
-                <div class="mentor-subj">
-                  Computer Science
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="mentor-card-content">
-
-              <p>
-                Leads the coding track from core programming fundamentals
-                to logic building and competitive coding.
-              </p>
-
-              <div class="mentor-card-bottom">
-
-                <span class="mentor-speciality">
-                  <i class="fa-solid fa-code"></i>
-                  Coding &amp; Logic
-                </span>
-
-                <a
-                  href="#contact"
-                  class="mentor-profile-btn"
-                  onclick="openBookingForm('Session with Sonal Deshmukh')"
-                  aria-label="Book session with Sonal Deshmukh"
-                >
-                  <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-              </div>
-
-            </div>
-
-          </article>
+          </div>
 
         </div>
 
-      </div>
+        <div class="mentor-card-content">
 
-      <div class="mentor-nav">
+          <p>
+            Visionary academic mentor dedicated to guiding students through
+            strategic planning, motivation and result-oriented preparation
+            for competitive examinations.
+          </p>
 
-        <button
-          class="mnav-btn"
-          id="mentorPrev"
-          type="button"
-          aria-label="Previous mentors"
-        >
-          <svg viewBox="0 0 24 24">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
+          <div class="mentor-card-bottom">
 
-        <div class="mnav-dots" id="mentorDots"></div>
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-user-graduate"></i>
+              Academic Leadership
+            </span>
 
-        <button
-          class="mnav-btn"
-          id="mentorNext"
-          type="button"
-          aria-label="Next mentors"
-        >
-          <svg viewBox="0 0 24 24">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Anil Choudhary')"
+              aria-label="Book session with Anil Choudhary"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
-      </div>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ANURADHA CHOUDHARY -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Anuradha Choudhary"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 141943.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            10 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Anuradha Choudhary
+            </h4>
+
+            <div class="mentor-subj">
+              Director, English
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Expert English educator focused on grammar, vocabulary,
+            comprehension and communication skills for academic and
+            competitive examinations.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-book-open"></i>
+              English Expert
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Anuradha Choudhary')"
+              aria-label="Book session with Anuradha Choudhary"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SOURABH KHANDELWAL -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Sourabh Khandelwal"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 141952.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            9 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Sourabh Khandelwal
+            </h4>
+
+            <div class="mentor-subj">
+              Polity, Eco. &amp; Current Affairs
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Simplifies Polity, Economics and Current Affairs through
+            conceptual learning, updated examples and smart exam-oriented
+            preparation strategies.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-landmark"></i>
+              Polity &amp; Economy
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Sourabh Khandelwal')"
+              aria-label="Book session with Sourabh Khandelwal"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ROSHAN DHAKAR -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Roshan Dhakar"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142005.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            7 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Roshan Dhakar
+            </h4>
+
+            <div class="mentor-subj">
+              Raj. GK &amp; Psychology
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Specializes in Rajasthan GK and Psychology with easy concepts,
+            effective memory techniques and structured preparation for
+            competitive examinations.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-brain"></i>
+              Raj. GK &amp; Psychology
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Roshan Dhakar')"
+              aria-label="Book session with Roshan Dhakar"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- RAJENDRA CHOUHAN -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Rajendra Chouhan"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142014.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            8 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Rajendra Chouhan
+            </h4>
+
+            <div class="mentor-subj">
+              Mathematics &amp; Quant
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Makes Mathematics and Quantitative Aptitude easier through
+            conceptual clarity, shortcut techniques and extensive
+            exam-focused problem-solving practice.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-square-root-variable"></i>
+              Mathematics &amp; Quant
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Rajendra Chouhan')"
+              aria-label="Book session with Rajendra Chouhan"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- JOGENDRA SIR -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Jogendra Sir"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142023.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Jogendra Sir
+            </h4>
+
+            <div class="mentor-subj">
+              Raj. &amp; India Geography
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Covers Rajasthan and Indian Geography through maps, diagrams,
+            regional examples and concept-based explanations for competitive
+            examination preparation.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-earth-asia"></i>
+              Geography Expert
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Jogendra Sir')"
+              aria-label="Book session with Jogendra Sir"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MUDIT JAIN -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Mudit Jain"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142032.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Mudit Jain
+            </h4>
+
+            <div class="mentor-subj">
+              English &amp; PD
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Helps students improve English communication, personality
+            development, interview skills and confidence for academic,
+            professional and competitive success.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-comments"></i>
+              English &amp; PD
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Mudit Jain')"
+              aria-label="Book session with Mudit Jain"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ARPIT SONI -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Arpit Soni"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142039.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Arpit Soni
+            </h4>
+
+            <div class="mentor-subj">
+              DI-LR
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Expert in Data Interpretation and Logical Reasoning with
+            practical techniques, puzzle-solving methods and strategies
+            for improving speed and accuracy.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-chart-column"></i>
+              DI &amp; LR Expert
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Arpit Soni')"
+              aria-label="Book session with Arpit Soni"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- MUKESH CHOUDHARY -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Mukesh Choudhary"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142046.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Mukesh Choudhary
+            </h4>
+
+            <div class="mentor-subj">
+              Maths &amp; Reasoning
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Simplifies Mathematics and Reasoning through logical approaches,
+            shortcut methods and continuous practice designed for
+            competitive examination success.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-calculator"></i>
+              Maths &amp; Reasoning
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Mukesh Choudhary')"
+              aria-label="Book session with Mukesh Choudhary"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- NIRMALA SAHU -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Nirmala Sahu"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142054.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Nirmala Sahu
+            </h4>
+
+            <div class="mentor-subj">
+              Hindi
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Dedicated Hindi educator with expertise in grammar, literature,
+            comprehension and language skills for academic and competitive
+            examinations.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-language"></i>
+              Hindi Expert
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Nirmala Sahu')"
+              aria-label="Book session with Nirmala Sahu"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ISHA GUPTA -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Isha Gupta"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142101.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Isha Gupta
+            </h4>
+
+            <div class="mentor-subj">
+              Gen. Science
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Covers Physics, Chemistry and Biology fundamentals through
+            clear explanations, practical examples and exam-oriented
+            General Science preparation.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-flask-vial"></i>
+              General Science
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Isha Gupta')"
+              aria-label="Book session with Isha Gupta"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CHIRAG CHANDEL -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Chirag Chandel"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142108.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Chirag Chandel
+            </h4>
+
+            <div class="mentor-subj">
+              Eco., Current GK, S &amp; T
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Guides students in Economics, Current GK and Science &amp;
+            Technology with updated content, analytical explanations
+            and exam-focused preparation.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-newspaper"></i>
+              Current GK &amp; S&amp;T
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Chirag Chandel')"
+              aria-label="Book session with Chirag Chandel"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ANTIMA SONI -->
+
+      <article class="mentor-card">
+
+        <div class="mentor-photo-wrap">
+
+          <div
+            class="mentor-photo"
+            role="img"
+            aria-label="Antima Soni"
+            style="
+              background-image:
+              url('img/Screenshot\ 2026-07-29\ 142114.png');
+            "
+          ></div>
+
+          <div class="mentor-experience">
+            <i class="fa-solid fa-medal"></i>
+            6 Years
+          </div>
+
+          <div class="mentor-image-info">
+
+            <h4>
+              Antima Soni
+            </h4>
+
+            <div class="mentor-subj">
+              Center Manager
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="mentor-card-content">
+
+          <p>
+            Ensures smooth academic operations, student support, parent
+            coordination and an organized learning environment throughout
+            every student's academic journey.
+          </p>
+
+          <div class="mentor-card-bottom">
+
+            <span class="mentor-speciality">
+              <i class="fa-solid fa-building"></i>
+              Center Management
+            </span>
+
+            <a
+              href="#contact"
+              class="mentor-profile-btn"
+              onclick="openBookingForm('Session with Antima Soni')"
+              aria-label="Book session with Antima Soni"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
 
     </div>
+
+  </div>
+
+
+  <!-- MENTOR SLIDER NAVIGATION -->
+
+  <div class="mentor-nav">
+
+    <button
+      class="mnav-btn"
+      id="mentorPrev"
+      type="button"
+      aria-label="Previous mentors"
+    >
+      <svg viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="mnav-dots" id="mentorDots"></div>
+
+    <button
+      class="mnav-btn"
+      id="mentorNext"
+      type="button"
+      aria-label="Next mentors"
+    >
+      <svg viewBox="0 0 24 24">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+  </div>
+
+</div>
 
   </div>
 
