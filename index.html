@@ -802,56 +802,29 @@
 <!-- =========================
      HEADER START
 ========================= -->
-
 <header>
 
   <!-- TOP BAR -->
   <div class="nav-topbar wrap">
 
-    <a href="#courses">
-      Courses
+    <a href="past-papers.html">
+      Past Papers
     </a>
 
-    <a href="#demo-classes">
-      Demo Classes
-    </a>
-
-    <a href="#free-tests">
-      Free Tests
-    </a>
-
-    <a href="#mentors">
-      Mentors
-    </a>
-
-    <a href="#success-wall">
-      Success Wall
+    <a href="blog.html">
+      Blog
     </a>
 
     <a
-      href="#contact"
-      onclick="openBookingForm('Book Demo')"
-    >
-      Book Demo
-    </a>
-
-    <a
-      href="https://web.classplusapp.com/login"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Login
-    </a>
-
-    <a
-      href="tel:+919800000000"
+      href="tel:+919414372288"
       class="call-link"
     >
       <i class="fa-solid fa-phone"></i>
-      +91 98XXX XXXXX
+      94143 72288
     </a>
 
   </div>
+
 
   <!-- MAIN NAVBAR -->
   <div class="wrap nav">
@@ -866,6 +839,7 @@
       >
 
     </a>
+
 
     <!-- MAIN NAVIGATION -->
     <ul class="nav-links" id="navLinks">
@@ -980,21 +954,15 @@
 
       </li>
 
-      <!-- OUR TEAM -->
-      <li>
-        <a href="#mentors">
-          Our Team
-        </a>
-      </li>
 
-      <!-- DEMO CLASS -->
+      <!-- DEMO CLASSES -->
       <li id="dd-demo">
 
         <button
           type="button"
           onclick="toggleDD('dd-demo')"
         >
-          Demo Class
+          Demo Classes
 
           <i class="fa-solid fa-chevron-down dd-chev"></i>
         </button>
@@ -1047,90 +1015,37 @@
 
       </li>
 
-      <!-- RESOURCES -->
-      <li id="dd-res">
 
-        <button
-          type="button"
-          onclick="toggleDD('dd-res')"
-        >
-          Resources
-
-          <i class="fa-solid fa-chevron-down dd-chev"></i>
-        </button>
-
-        <div class="dropdown">
-
-          <a href="past-papers.html">
-
-            <div class="dd-icon">
-              <i class="fa-solid fa-file-lines"></i>
-            </div>
-
-            <div class="dd-text">
-              <strong>
-                Past Papers
-              </strong>
-
-              <span>
-                IPMAT, CUET and entrance archives
-              </span>
-            </div>
-
-          </a>
-
-          <a href="blog.html">
-
-            <div class="dd-icon">
-              <i class="fa-solid fa-pen"></i>
-            </div>
-
-            <div class="dd-text">
-              <strong>
-                Blog
-              </strong>
-
-              <span>
-                Tips, strategies and student stories
-              </span>
-            </div>
-
-          </a>
-
-          <a href="#free-tests">
-
-            <div class="dd-icon">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-
-            <div class="dd-text">
-              <strong>
-                Free Tests
-              </strong>
-
-              <span>
-                Practice tests and mock exams
-              </span>
-            </div>
-
-          </a>
-
-        </div>
-
+      <!-- FREE TESTS -->
+      <li>
+        <a href="#free-tests">
+          Free Tests
+        </a>
       </li>
 
-      <!-- CONTACT -->
+
+      <!-- MENTORS -->
       <li>
-        <a href="#footer">
-          Contact Us
+        <a href="#mentors">
+          Mentors
+        </a>
+      </li>
+
+
+      <!-- SUCCESS WALL -->
+      <li>
+        <a href="#success-wall">
+          Success Wall
         </a>
       </li>
 
     </ul>
 
+
     <!-- RIGHT SIDE CTA -->
     <div class="nav-cta">
 
+      <!-- BOOK DEMO -->
       <div
         class="nav-book-wrapper"
         id="dd-book-wrapper"
@@ -1141,9 +1056,9 @@
           type="button"
           onclick="toggleBookDropdown(event)"
         >
-          Book Now — Free
+          <i class="fa-solid fa-calendar-check"></i>
 
-          <i class="fa-solid fa-chevron-down dd-chev"></i>
+          Book Demo
         </button>
 
         <div
@@ -1197,6 +1112,19 @@
 
       </div>
 
+
+      <!-- LOGIN BUTTON -->
+      <a
+        href="https://web.classplusapp.com/login"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-login"
+      >
+        <i class="fa-regular fa-user"></i>
+        Login
+      </a>
+
+
       <!-- MOBILE BUTTON -->
       <button
         class="burger"
@@ -1240,6 +1168,7 @@
 
 </header>
 
+
 <script>
   function toggleMobileNavigation(button) {
     const navLinks =
@@ -1258,6 +1187,7 @@
     );
   }
 
+
   function toggleBookDropdown(event) {
     event.stopPropagation();
 
@@ -1272,6 +1202,7 @@
 
     wrapper.classList.toggle("open");
   }
+
 
   document.addEventListener(
     "click",
@@ -1291,11 +1222,13 @@
   );
 </script>
 
+
 <style>
   /* TOP BAR LINKS */
   .nav-topbar {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 22px;
   }
 
@@ -1312,8 +1245,6 @@
   }
 
   .nav-topbar .call-link {
-    margin-left: auto;
-
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -1323,7 +1254,23 @@
     color: #ff4057;
   }
 
-  /* BOOK NOW DROPDOWN FIX */
+
+  /* NAVBAR LINKS KO SCREENSHOT KE ACCORDING SET */
+  .nav-links {
+    margin-left: 32px;
+  }
+
+
+  /* RIGHT SIDE CTA */
+  .nav-cta {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+  /* BOOK DEMO DROPDOWN */
   .nav-book-wrapper {
     position: relative;
   }
@@ -1331,8 +1278,8 @@
   .nav-book-wrapper .book-dropdown {
     left: auto;
     right: 0;
-    transform: none;
     min-width: 260px;
+    transform: translateY(10px);
   }
 
   .nav-book-wrapper.open .book-dropdown {
@@ -1341,6 +1288,43 @@
     pointer-events: auto;
     transform: translateY(0);
   }
+
+
+  /* LOGIN BUTTON */
+  .btn-login {
+    min-height: 42px;
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: #ffffff;
+    background: #17233d;
+
+    border: 1px solid #17233d;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .btn-login:hover {
+    color: #ffffff;
+    background: #0e182d;
+    border-color: #0e182d;
+    transform: translateY(-1px);
+  }
+
 
   @media (max-width: 1100px) {
     .nav-topbar {
@@ -1353,8 +1337,36 @@
       display: none;
     }
 
-    .nav-topbar .call-link {
+    .nav-links {
+      margin-left: 22px;
+    }
+
+    .nav-cta {
+      gap: 8px;
+    }
+
+    .btn-login {
+      padding: 0 13px;
+      font-size: 12px;
+    }
+  }
+
+
+  @media (max-width: 900px) {
+    .nav-links {
       margin-left: 0;
+    }
+
+    .btn-login {
+      min-height: 40px;
+      padding: 0 12px;
+    }
+  }
+
+
+  @media (max-width: 560px) {
+    .btn-login {
+      display: none;
     }
   }
 </style>
@@ -1958,10 +1970,10 @@
 
     <div class="hero-bottom hero-building">
 
-      <div class="hero-building-image-wrap">
+      <div class="hero-building-image-wrap ">
 
         <img
-          src="img/icon.png"
+          src="img/chlna.png"
           alt="ICON Career Education Building"
           class="hero-building-image"
         >
@@ -2018,32 +2030,44 @@
 <section class="courses" id="courses">
 
   <style>
+    /* =====================================
+       COURSE META: BATCH + TYPE
+    ====================================== */
+
     #courses .course-meta-row {
+      width: 100%;
+      margin-bottom: 14px;
+
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      gap: 16px;
     }
 
     #courses .course-meta-row .course-class,
     #courses .course-duration-top {
-      min-height: 34px;
-      padding: 7px 10px;
+      width: auto;
+      min-width: 0;
+      min-height: auto;
+      padding: 0;
+      margin: 0;
 
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      justify-content: flex-start;
+      gap: 6px;
 
-      border: 1px solid #d9dee7;
-      border-radius: 7px;
+      border: none !important;
+      outline: none;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent !important;
 
-      background: #f8fafc;
       color: #536075;
-
       font-size: 11px;
       font-weight: 800;
-      line-height: 1;
+      line-height: 1.2;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -2051,8 +2075,14 @@
     #courses .course-meta-row .course-class i,
     #courses .course-duration-top i {
       color: #ff4057;
-      font-size: 12px;
+      font-size: 11px;
+      line-height: 1;
     }
+
+
+    /* =====================================
+       COURSE BOTTOM
+    ====================================== */
 
     #courses .course-bottom {
       margin-top: auto;
@@ -2087,15 +2117,25 @@
       color: #ff4057;
     }
 
+
+    /* =====================================
+       RESPONSIVE
+    ====================================== */
+
     @media (max-width: 480px) {
       #courses .course-meta-row {
-        gap: 6px;
+        gap: 10px;
       }
 
       #courses .course-meta-row .course-class,
       #courses .course-duration-top {
-        padding: 7px 8px;
-        font-size: 10px;
+        font-size: 9px;
+        gap: 4px;
+      }
+
+      #courses .course-meta-row .course-class i,
+      #courses .course-duration-top i {
+        font-size: 9px;
       }
 
       #courses .course-watch-link {
@@ -2104,6 +2144,7 @@
       }
     }
   </style>
+
 
   <div class="wrap">
 
@@ -2129,6 +2170,7 @@
 
   </div>
 
+
   <div class="courses-marquee">
 
     <div
@@ -2139,6 +2181,7 @@
   </div>
 
 </section>
+
 
 <script>
   (function () {
@@ -2162,6 +2205,7 @@
           "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&h=450&fit=crop"
       },
 
+
       /* COURSE 2 */
       {
         title: "Target IPMATs – CUET 2027",
@@ -2178,6 +2222,7 @@
         image:
           "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
       },
+
 
       /* COURSE 3 */
       {
@@ -2196,6 +2241,7 @@
           "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
       },
 
+
       /* COURSE 4 */
       {
         title: "Target IPMATs 2027 – Only English (VA-RC)",
@@ -2212,6 +2258,7 @@
         image:
           "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&h=450&fit=crop"
       },
+
 
       /* COURSE 5 */
       {
@@ -2230,6 +2277,7 @@
           "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
       },
 
+
       /* COURSE 6 */
       {
         title: "Target IPMAT – CUET 2028",
@@ -2246,6 +2294,7 @@
         image:
           "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
       },
+
 
       /* COURSE 7 */
       {
@@ -2264,6 +2313,7 @@
           "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=700&h=450&fit=crop"
       },
 
+
       /* COURSE 8 */
       {
         title: "Target IPMATs 2028 – Only English (VA-RC)",
@@ -2281,6 +2331,7 @@
           "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&h=450&fit=crop"
       }
     ];
+
 
     function createCourseCard(course, index) {
 
@@ -2301,11 +2352,13 @@
 
           </div>
 
+
           <div class="course-content">
 
             <h3 class="course-title">
               ${course.title}
             </h3>
+
 
             <!-- BATCH + COURSE TYPE -->
             <div class="course-meta-row">
@@ -2318,6 +2371,7 @@
 
               </span>
 
+
               <span class="course-duration-top">
 
                 <i class="fa-solid fa-circle-play"></i>
@@ -2328,10 +2382,11 @@
 
             </div>
 
+
             <!-- VALIDITY -->
             <p
               style="
-                margin: -5px 0 12px;
+                margin: 0 0 12px;
                 color: #59667a;
                 font-size: 12px;
                 font-weight: 700;
@@ -2350,10 +2405,12 @@
 
             </p>
 
+
             <!-- DESCRIPTION -->
             <p class="course-description">
               ${course.description}
             </p>
+
 
             <!-- BEST FOR -->
             <div class="course-best-for">
@@ -2374,6 +2431,7 @@
 
             </div>
 
+
             <!-- BOTTOM -->
             <div class="course-bottom">
 
@@ -2390,6 +2448,7 @@
                 </span>
 
               </a>
+
 
               <a
                 href="#contact"
@@ -2410,6 +2469,7 @@
       `;
     }
 
+
     function renderFinalCourses() {
 
       const courseTrack =
@@ -2419,23 +2479,22 @@
         return;
       }
 
+
       const courseCards =
         courses
           .map(createCourseCard)
           .join("");
 
-      /*
-        Cards ko do baar repeat kiya gaya hai
-        taaki marquee continuously chale.
-      */
 
       courseTrack.innerHTML =
         courseCards + courseCards;
+
 
       const courseLinks =
         courseTrack.querySelectorAll(
           "[data-course]"
         );
+
 
       courseLinks.forEach(function (link) {
 
@@ -2445,6 +2504,7 @@
 
             const courseTitle =
               this.getAttribute("data-course");
+
 
             if (
               typeof window.openBookingForm ===
@@ -2458,6 +2518,7 @@
 
       });
     }
+
 
     window.addEventListener(
       "load",
@@ -2778,142 +2839,88 @@
 <!-- =========================================
      EVENTS SECTION START
 ========================================= -->
-
 <section class="icon-events-section" id="events">
 
   <style>
+    /* =========================================
+       EVENTS SECTION
+    ========================================== */
+
     .icon-events-section,
     .icon-events-section * {
       box-sizing: border-box;
     }
 
     .icon-events-section {
-      position: relative;
       width: 100%;
-      padding: 100px 0;
+      padding: 75px 0;
       overflow: hidden;
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(255, 64, 87, 0.08),
-          transparent 32%
-        ),
-        #f8fafc;
-    }
-
-    .icon-events-section::before {
-      content: "";
-      position: absolute;
-      top: -160px;
-      left: -160px;
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: rgba(15, 23, 42, 0.035);
-      pointer-events: none;
+      background: #ffffff;
     }
 
     .icon-events-wrap {
-      position: relative;
-      z-index: 2;
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* =========================
+
+    /* =========================================
        HEADING
-    ========================= */
+    ========================================== */
 
     .icon-events-heading-row {
-      margin-bottom: 42px;
+      margin-bottom: 28px;
 
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      gap: 30px;
+      gap: 25px;
     }
 
     .icon-events-heading-content {
-      max-width: 720px;
+      max-width: 700px;
     }
 
     .icon-events-label {
-      width: fit-content;
-      min-height: 32px;
-      margin-bottom: 14px;
-      padding: 7px 13px;
+      margin-bottom: 8px;
 
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      border: 1px solid rgba(255, 64, 87, 0.2);
-      border-radius: 999px;
-
-      background: rgba(255, 64, 87, 0.07);
       color: #ff4057;
-
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
-      letter-spacing: 0.08em;
       line-height: 1;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
-    .icon-events-label::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      flex: 0 0 7px;
-      border-radius: 50%;
-      background: #ff4057;
-      box-shadow: 0 0 0 5px rgba(255, 64, 87, 0.1);
-    }
-
     .icon-events-heading-content h2 {
-      margin: 0 0 14px;
-
-      color: #172033;
-      font-size: clamp(34px, 4vw, 54px);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-    }
-
-    .icon-events-heading-content h2 span {
-      color: #ff4057;
-    }
-
-    .icon-events-heading-content p {
-      max-width: 650px;
       margin: 0;
 
-      color: #748096;
-      font-size: 16px;
-      line-height: 1.75;
+      color: #172033;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
     }
 
     .icon-events-view-all {
-      min-height: 48px;
-      padding: 12px 20px;
+      min-height: 42px;
+      padding: 0 17px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 8px;
       flex: 0 0 auto;
 
-      border: 1px solid #dce2eb;
-      border-radius: 10px;
+      border: 1px solid #dbe1ea;
+      border-radius: 7px;
 
       background: #ffffff;
       color: #172033;
 
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 800;
       text-decoration: none;
-
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
 
       transition:
         color 0.25s ease,
@@ -2924,314 +2931,75 @@
 
     .icon-events-view-all i {
       color: #ff4057;
-      transition: transform 0.25s ease;
+      font-size: 12px;
     }
 
     .icon-events-view-all:hover {
-      transform: translateY(-2px);
-      border-color: #ff4057;
-      background: #ff4057;
       color: #ffffff;
+      background: #ff4057;
+      border-color: #ff4057;
+      transform: translateY(-2px);
     }
 
     .icon-events-view-all:hover i {
       color: #ffffff;
-      transform: translateX(3px);
     }
 
-    /* =========================
-       FEATURED EVENT
-    ========================= */
 
-    .icon-featured-event {
-      position: relative;
-      min-height: 420px;
-      margin-bottom: 26px;
+    /* =========================================
+       MARQUEE
+    ========================================== */
 
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-
-      overflow: hidden;
-      border: 1px solid #e2e7ef;
-      border-radius: 24px;
-
-      background: #ffffff;
-      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.09);
-    }
-
-    .icon-featured-event-image {
-      position: relative;
-      min-height: 420px;
-      overflow: hidden;
-    }
-
-    .icon-featured-event-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(15, 23, 42, 0.03),
-          rgba(15, 23, 42, 0.34)
-        );
-      pointer-events: none;
-    }
-
-    .icon-featured-event-image img {
+    .icon-events-marquee {
       width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-
-      transition: transform 0.65s ease;
+      overflow: hidden;
     }
 
-    .icon-featured-event:hover
-    .icon-featured-event-image img {
-      transform: scale(1.045);
-    }
-
-    .icon-featured-event-date {
-      position: absolute;
-      top: 22px;
-      left: 22px;
-      z-index: 3;
-
-      width: 76px;
-      min-height: 82px;
-      padding: 11px 8px;
+    .icon-events-track {
+      width: max-content;
 
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: stretch;
+      gap: 18px;
 
-      border: 1px solid rgba(255, 255, 255, 0.38);
-      border-radius: 15px;
-
-      background: rgba(255, 255, 255, 0.94);
-      color: #172033;
-
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      animation:
+        iconEventsMarquee 38s linear infinite;
+      will-change: transform;
     }
 
-    .icon-featured-event-date strong {
-      color: #ff4057;
-      font-size: 30px;
-      font-weight: 900;
-      line-height: 1;
+    .icon-events-marquee:hover
+    .icon-events-track {
+      animation-play-state: paused;
     }
 
-    .icon-featured-event-date span {
-      margin-top: 5px;
-      color: #526078;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    @keyframes iconEventsMarquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
     }
 
-    .icon-featured-badge {
-      position: absolute;
-      right: 22px;
-      bottom: 22px;
-      z-index: 3;
 
-      min-height: 34px;
-      padding: 8px 12px;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 999px;
-
-      background: rgba(15, 23, 42, 0.82);
-      color: #ffffff;
-
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .icon-featured-badge i {
-      color: #ff4057;
-    }
-
-    .icon-featured-event-content {
-      padding: 44px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .icon-event-status {
-      width: fit-content;
-      margin-bottom: 18px;
-      padding: 7px 11px;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-
-      border-radius: 999px;
-
-      background: rgba(34, 197, 94, 0.1);
-      color: #15803d;
-
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .icon-event-status::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.11);
-    }
-
-    .icon-featured-event-content h3 {
-      margin: 0 0 16px;
-
-      color: #172033;
-      font-size: clamp(28px, 3vw, 40px);
-      font-weight: 800;
-      line-height: 1.16;
-      letter-spacing: -0.035em;
-    }
-
-    .icon-featured-event-content > p {
-      margin: 0 0 24px;
-
-      color: #748096;
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .icon-featured-meta {
-      margin-bottom: 28px;
-
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .icon-featured-meta span {
-      min-height: 38px;
-      padding: 9px 12px;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      border: 1px solid #e2e7ef;
-      border-radius: 9px;
-
-      background: #f8fafc;
-      color: #59667c;
-
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .icon-featured-meta i {
-      color: #ff4057;
-    }
-
-    .icon-featured-event-actions {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .icon-event-primary-button,
-    .icon-event-secondary-button {
-      min-height: 48px;
-      padding: 12px 18px;
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-
-      border-radius: 10px;
-
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-
-      transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease;
-    }
-
-    .icon-event-primary-button {
-      border: 1px solid #ff4057;
-      background: #ff4057;
-      color: #ffffff;
-      box-shadow: 0 12px 25px rgba(255, 64, 87, 0.2);
-    }
-
-    .icon-event-primary-button:hover {
-      transform: translateY(-2px);
-      background: #e9364d;
-    }
-
-    .icon-event-secondary-button {
-      border: 1px solid #dce2eb;
-      background: #ffffff;
-      color: #172033;
-    }
-
-    .icon-event-secondary-button i {
-      color: #ff4057;
-    }
-
-    .icon-event-secondary-button:hover {
-      transform: translateY(-2px);
-      border-color: #ff4057;
-      color: #ff4057;
-    }
-
-    /* =========================
-       EVENT CARDS
-    ========================= */
-
-    .icon-events-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
+    /* =========================================
+       EVENT CARD
+    ========================================== */
 
     .icon-event-card {
-      min-width: 0;
+      width: 320px;
+      min-width: 320px;
       overflow: hidden;
 
       display: flex;
       flex-direction: column;
 
-      border: 1px solid #e2e7ef;
-      border-radius: 18px;
+      border: 1px solid #e2e6ed;
+      border-radius: 12px;
 
       background: #ffffff;
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
 
       transition:
         transform 0.3s ease,
@@ -3240,29 +3008,22 @@
     }
 
     .icon-event-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(255, 64, 87, 0.28);
-      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.11);
+      transform: translateY(-6px);
+      border-color: rgba(255, 64, 87, 0.35);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.11);
     }
+
+
+    /* =========================================
+       EVENT IMAGE
+    ========================================== */
 
     .icon-event-card-image {
       position: relative;
-      height: 220px;
+      width: 100%;
+      height: 205px;
       overflow: hidden;
-      background: #e9edf3;
-    }
-
-    .icon-event-card-image::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          180deg,
-          transparent 45%,
-          rgba(15, 23, 42, 0.5)
-        );
-      pointer-events: none;
+      background: #edf0f4;
     }
 
     .icon-event-card-image img {
@@ -3279,136 +3040,146 @@
       transform: scale(1.055);
     }
 
-    .icon-event-card-date {
+    .icon-event-number {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 3;
+      top: 12px;
+      left: 12px;
 
-      width: 60px;
-      min-height: 66px;
-      padding: 8px 6px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      border-radius: 12px;
-
-      background: rgba(255, 255, 255, 0.95);
-      color: #172033;
-
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
-    }
-
-    .icon-event-card-date strong {
-      color: #ff4057;
-      font-size: 23px;
-      font-weight: 900;
-      line-height: 1;
-    }
-
-    .icon-event-card-date span {
-      margin-top: 4px;
-      color: #69758a;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .icon-event-category {
-      position: absolute;
-      right: 15px;
-      bottom: 15px;
-      z-index: 3;
-
-      min-height: 30px;
-      padding: 7px 10px;
+      min-width: 34px;
+      min-height: 27px;
+      padding: 5px 8px;
 
       display: inline-flex;
       align-items: center;
+      justify-content: center;
 
-      border-radius: 999px;
+      border-radius: 5px;
 
-      background: rgba(15, 23, 42, 0.84);
+      background: #ff4057;
       color: #ffffff;
 
       font-size: 10px;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
     }
 
+    .icon-event-category {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+
+      min-height: 27px;
+      padding: 5px 9px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 5px;
+
+      background: rgba(23, 32, 51, 0.9);
+      color: #ffffff;
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       CARD CONTENT
+    ========================================== */
+
     .icon-event-card-content {
-      min-height: 255px;
-      padding: 23px;
+      min-height: 310px;
+      padding: 21px;
 
       display: flex;
       flex-direction: column;
+    }
+
+    .icon-event-date {
+      margin-bottom: 10px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      color: #ff4057;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .icon-event-card-content h3 {
       margin: 0 0 11px;
 
       color: #172033;
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       line-height: 1.3;
       letter-spacing: -0.02em;
     }
 
-    .icon-event-card-content > p {
-      margin: 0 0 18px;
+    .icon-event-description {
+      margin: 0 0 16px;
 
-      color: #748096;
+      color: #718097;
       font-size: 13px;
       line-height: 1.65;
     }
 
-    .icon-event-meta-list {
-      margin-bottom: 20px;
 
-      display: grid;
+    /* =========================================
+       EVENT META
+    ========================================== */
+
+    .icon-event-meta {
+      margin-bottom: 18px;
+
+      display: flex;
+      flex-direction: column;
       gap: 9px;
     }
 
-    .icon-event-meta-list span {
+    .icon-event-meta span {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
 
-      color: #5e6b80;
-      font-size: 12px;
+      color: #59667a;
+      font-size: 11px;
       font-weight: 700;
+      line-height: 1.4;
     }
 
-    .icon-event-meta-list i {
-      width: 15px;
+    .icon-event-meta i {
+      width: 14px;
       color: #ff4057;
       text-align: center;
     }
 
-    .icon-event-card-footer {
+
+    /* =========================================
+       CARD BOTTOM
+    ========================================== */
+
+    .icon-event-card-bottom {
       margin-top: auto;
-      padding-top: 16px;
+      padding-top: 15px;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
 
-      border-top: 1px solid #e7ebf1;
+      border-top: 1px solid #e6eaf0;
     }
 
     .icon-event-details-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
 
       color: #172033;
       font-size: 12px;
@@ -3420,7 +3191,6 @@
 
     .icon-event-details-link i {
       color: #ff4057;
-      font-size: 14px;
     }
 
     .icon-event-details-link:hover {
@@ -3428,15 +3198,15 @@
     }
 
     .icon-event-arrow {
-      width: 38px;
-      height: 38px;
-      flex: 0 0 38px;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
 
       display: inline-flex;
       align-items: center;
       justify-content: center;
 
-      border: 1px solid rgba(255, 64, 87, 0.22);
+      border: 1px solid rgba(255, 64, 87, 0.25);
       border-radius: 50%;
 
       background: rgba(255, 64, 87, 0.07);
@@ -3444,48 +3214,25 @@
       text-decoration: none;
 
       transition:
-        transform 0.25s ease,
+        color 0.25s ease,
         background 0.25s ease,
-        color 0.25s ease;
+        transform 0.25s ease;
     }
 
     .icon-event-arrow:hover {
-      transform: translateX(3px);
-      background: #ff4057;
       color: #ffffff;
+      background: #ff4057;
+      transform: translateX(3px);
     }
 
-    /* =========================
+
+    /* =========================================
        RESPONSIVE
-    ========================= */
-
-    @media (max-width: 1024px) {
-      .icon-events-section {
-        padding: 85px 0;
-      }
-
-      .icon-featured-event {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .icon-featured-event-content {
-        padding: 32px;
-      }
-
-      .icon-events-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .icon-event-card:last-child {
-        grid-column: 1 / -1;
-        width: calc(50% - 11px);
-        justify-self: center;
-      }
-    }
+    ========================================== */
 
     @media (max-width: 768px) {
       .icon-events-section {
-        padding: 70px 0;
+        padding: 60px 0;
       }
 
       .icon-events-wrap {
@@ -3493,548 +3240,490 @@
       }
 
       .icon-events-heading-row {
-        align-items: flex-start;
-      }
-
-      .icon-events-heading-content h2 {
-        font-size: 38px;
-      }
-
-      .icon-featured-event {
-        grid-template-columns: 1fr;
-      }
-
-      .icon-featured-event-image {
-        min-height: 320px;
-      }
-
-      .icon-featured-event-content {
-        padding: 30px;
-      }
-
-      .icon-events-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .icon-event-card:last-child {
-        grid-column: auto;
-        width: 100%;
+        align-items: center;
       }
 
       .icon-event-card {
-        display: grid;
-        grid-template-columns: 0.85fr 1.15fr;
+        width: 290px;
+        min-width: 290px;
       }
 
       .icon-event-card-image {
-        height: 100%;
-        min-height: 280px;
+        height: 190px;
       }
 
       .icon-event-card-content {
-        min-height: 280px;
+        min-height: 300px;
+        padding: 19px;
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 520px) {
       .icon-events-heading-row {
+        align-items: flex-start;
         flex-direction: column;
-        gap: 20px;
+        gap: 17px;
+      }
+
+      .icon-events-heading-content h2 {
+        font-size: 29px;
       }
 
       .icon-events-view-all {
         width: 100%;
       }
 
-      .icon-featured-event-image {
-        min-height: 260px;
-      }
-
-      .icon-featured-event-content {
-        padding: 24px 20px;
-      }
-
-      .icon-featured-event-content h3 {
-        font-size: 29px;
-      }
-
-      .icon-featured-event-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .icon-event-primary-button,
-      .icon-event-secondary-button {
-        width: 100%;
+      .icon-events-track {
+        gap: 14px;
       }
 
       .icon-event-card {
-        display: flex;
+        width: 280px;
+        min-width: 280px;
       }
 
       .icon-event-card-image {
-        height: 220px;
-        min-height: 220px;
+        height: 180px;
       }
 
       .icon-event-card-content {
-        min-height: 255px;
-        padding: 21px;
+        min-height: 295px;
       }
     }
 
-    @media (max-width: 420px) {
-      .icon-events-section {
-        padding: 58px 0;
+    @media (prefers-reduced-motion: reduce) {
+      .icon-events-track {
+        animation: none;
       }
 
-      .icon-events-heading-content h2 {
-        font-size: 32px;
-      }
-
-      .icon-events-heading-content p {
-        font-size: 14px;
-      }
-
-      .icon-featured-event-date {
-        top: 15px;
-        left: 15px;
-        width: 65px;
-        min-height: 72px;
-      }
-
-      .icon-featured-event-date strong {
-        font-size: 25px;
-      }
-
-      .icon-featured-badge {
-        right: 15px;
-        bottom: 15px;
-      }
-
-      .icon-featured-meta {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
-      .icon-featured-meta span {
-        width: 100%;
+      .icon-events-marquee {
+        overflow-x: auto;
       }
     }
   </style>
 
-  <div class="icon-events-wrap">
 
-    <!-- SECTION HEADING -->
+  <!-- =========================================
+       SECTION HEADING
+  ========================================== -->
+
+  <div class="icon-events-wrap">
 
     <div class="icon-events-heading-row">
 
       <div class="icon-events-heading-content">
 
         <div class="icon-events-label">
-          Campus Events
+          Upcoming Events
         </div>
 
         <h2>
-          Learn, compete and
-          <span>celebrate together</span>
+          Events students attend
         </h2>
 
-        <p>
-          Explore academic workshops, student activities, competitions,
-          seminars and special events happening at ICON Career Education.
-        </p>
-
       </div>
+
 
       <a
         href="#contact"
         class="icon-events-view-all"
         onclick="openIconEventForm('All Upcoming Events')"
       >
-        View All Events
+        View All
 
         <i class="fa-solid fa-arrow-right"></i>
       </a>
 
     </div>
 
-    <!-- FEATURED EVENT -->
+  </div>
 
-    <article class="icon-featured-event">
 
-      <div class="icon-featured-event-image">
+  <!-- =========================================
+       EVENTS MARQUEE
+  ========================================== -->
 
-        <img
-          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1100&h=750&fit=crop"
-          alt="ICON Career Guidance Seminar"
-          loading="lazy"
-        >
+  <div class="icon-events-marquee">
 
-        <div class="icon-featured-event-date">
-
-          <strong>
-            18
-          </strong>
-
-          <span>
-            August
-          </span>
-
-        </div>
-
-        <div class="icon-featured-badge">
-
-          <i class="fa-solid fa-star"></i>
-
-          Featured Event
-
-        </div>
-
-      </div>
-
-      <div class="icon-featured-event-content">
-
-        <div class="icon-event-status">
-          Registrations Open
-        </div>
-
-        <h3>
-          Career Guidance &amp; Scholarship Seminar 2026
-        </h3>
-
-        <p>
-          Join ICON experts for a complete guidance session covering
-          competitive examinations, career opportunities, preparation
-          strategies and available scholarship programs.
-        </p>
-
-        <div class="icon-featured-meta">
-
-          <span>
-            <i class="fa-regular fa-calendar"></i>
-            18 August 2026
-          </span>
-
-          <span>
-            <i class="fa-regular fa-clock"></i>
-            10:00 AM
-          </span>
-
-          <span>
-            <i class="fa-solid fa-location-dot"></i>
-            ICON Campus, Bhilwara
-          </span>
-
-        </div>
-
-        <div class="icon-featured-event-actions">
-
-          <a
-            href="#contact"
-            class="icon-event-primary-button"
-            onclick="openIconEventForm('Career Guidance & Scholarship Seminar 2026')"
-          >
-            <i class="fa-solid fa-ticket"></i>
-            Register Now
-          </a>
-
-          <a
-            href="#contact"
-            class="icon-event-secondary-button"
-            onclick="openIconEventForm('Career Guidance & Scholarship Seminar 2026')"
-          >
-            <i class="fa-regular fa-circle-play"></i>
-            Know More
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-    <!-- EVENT CARDS -->
-
-    <div class="icon-events-grid">
-
-      <!-- EVENT CARD 1 -->
-
-      <article class="icon-event-card">
-
-        <div class="icon-event-card-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
-            alt="JEE and NEET strategy workshop"
-            loading="lazy"
-          >
-
-          <div class="icon-event-card-date">
-
-            <strong>
-              24
-            </strong>
-
-            <span>
-              August
-            </span>
-
-          </div>
-
-          <span class="icon-event-category">
-            Workshop
-          </span>
-
-        </div>
-
-        <div class="icon-event-card-content">
-
-          <h3>
-            JEE &amp; NEET Success Strategy Workshop
-          </h3>
-
-          <p>
-            Learn practical preparation strategies, revision planning
-            and test-taking techniques from experienced ICON mentors.
-          </p>
-
-          <div class="icon-event-meta-list">
-
-            <span>
-              <i class="fa-regular fa-clock"></i>
-              11:00 AM – 1:00 PM
-            </span>
-
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              Seminar Hall, ICON Campus
-            </span>
-
-          </div>
-
-          <div class="icon-event-card-footer">
-
-            <a
-              href="#contact"
-              class="icon-event-details-link"
-              onclick="openIconEventForm('JEE & NEET Success Strategy Workshop')"
-            >
-              <i class="fa-regular fa-circle-play"></i>
-              View Details
-            </a>
-
-            <a
-              href="#contact"
-              class="icon-event-arrow"
-              onclick="openIconEventForm('JEE & NEET Success Strategy Workshop')"
-              aria-label="View JEE and NEET workshop details"
-            >
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-      <!-- EVENT CARD 2 -->
-
-      <article class="icon-event-card">
-
-        <div class="icon-event-card-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop"
-            alt="ICON scholarship test"
-            loading="lazy"
-          >
-
-          <div class="icon-event-card-date">
-
-            <strong>
-              31
-            </strong>
-
-            <span>
-              August
-            </span>
-
-          </div>
-
-          <span class="icon-event-category">
-            Scholarship Test
-          </span>
-
-        </div>
-
-        <div class="icon-event-card-content">
-
-          <h3>
-            ICON Talent &amp; Scholarship Test
-          </h3>
-
-          <p>
-            Students can test their academic potential and become
-            eligible for performance-based ICON scholarships.
-          </p>
-
-          <div class="icon-event-meta-list">
-
-            <span>
-              <i class="fa-regular fa-clock"></i>
-              9:30 AM – 12:00 PM
-            </span>
-
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              ICON Examination Centre
-            </span>
-
-          </div>
-
-          <div class="icon-event-card-footer">
-
-            <a
-              href="#contact"
-              class="icon-event-details-link"
-              onclick="openIconEventForm('ICON Talent & Scholarship Test')"
-            >
-              <i class="fa-regular fa-circle-play"></i>
-              View Details
-            </a>
-
-            <a
-              href="#contact"
-              class="icon-event-arrow"
-              onclick="openIconEventForm('ICON Talent & Scholarship Test')"
-              aria-label="View ICON scholarship test details"
-            >
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-      <!-- EVENT CARD 3 -->
-
-      <article class="icon-event-card">
-
-        <div class="icon-event-card-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=600&fit=crop"
-            alt="ICON student achievers celebration"
-            loading="lazy"
-          >
-
-          <div class="icon-event-card-date">
-
-            <strong>
-              07
-            </strong>
-
-            <span>
-              September
-            </span>
-
-          </div>
-
-          <span class="icon-event-category">
-            Celebration
-          </span>
-
-        </div>
-
-        <div class="icon-event-card-content">
-
-          <h3>
-            Achievers Meet &amp; Student Felicitation
-          </h3>
-
-          <p>
-            A special celebration honoring outstanding student
-            achievements, academic results and competitive exam success.
-          </p>
-
-          <div class="icon-event-meta-list">
-
-            <span>
-              <i class="fa-regular fa-clock"></i>
-              4:00 PM – 6:30 PM
-            </span>
-
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-              ICON Main Auditorium
-            </span>
-
-          </div>
-
-          <div class="icon-event-card-footer">
-
-            <a
-              href="#contact"
-              class="icon-event-details-link"
-              onclick="openIconEventForm('Achievers Meet & Student Felicitation')"
-            >
-              <i class="fa-regular fa-circle-play"></i>
-              View Details
-            </a>
-
-            <a
-              href="#contact"
-              class="icon-event-arrow"
-              onclick="openIconEventForm('Achievers Meet & Student Felicitation')"
-              aria-label="View achievers meet details"
-            >
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
+    <div
+      class="icon-events-track"
+      id="iconEventsTrack"
+    ></div>
 
   </div>
 
-  <script>
-    /*
-      Existing website mein openBookingForm function hai,
-      to event click par wahi form open hoga.
-    */
+</section>
 
-    function openIconEventForm(eventName) {
+
+<script>
+  (function () {
+
+    const iconEvents = [
+
+      {
+        title:
+          "Career Guidance & Scholarship Seminar 2026",
+
+        category:
+          "Featured Event",
+
+        date:
+          "18 August 2026",
+
+        time:
+          "10:00 AM",
+
+        location:
+          "ICON Campus, Bhilwara",
+
+        description:
+          "Complete guidance session covering competitive exams, preparation strategies, career opportunities and scholarship programs.",
+
+        image:
+          "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=550&fit=crop"
+      },
+
+
+      {
+        title:
+          "JEE & NEET Success Strategy Workshop",
+
+        category:
+          "Workshop",
+
+        date:
+          "24 August 2026",
+
+        time:
+          "11:00 AM – 1:00 PM",
+
+        location:
+          "Seminar Hall, ICON Campus",
+
+        description:
+          "Learn practical preparation, revision planning and test-taking strategies from experienced ICON mentors.",
+
+        image:
+          "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=550&fit=crop"
+      },
+
+
+      {
+        title:
+          "ICON Talent & Scholarship Test",
+
+        category:
+          "Scholarship Test",
+
+        date:
+          "31 August 2026",
+
+        time:
+          "9:30 AM – 12:00 PM",
+
+        location:
+          "ICON Examination Centre",
+
+        description:
+          "Test your academic potential and become eligible for performance-based ICON scholarships.",
+
+        image:
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=550&fit=crop"
+      },
+
+
+      {
+        title:
+          "Achievers Meet & Student Felicitation",
+
+        category:
+          "Celebration",
+
+        date:
+          "07 September 2026",
+
+        time:
+          "4:00 PM – 6:30 PM",
+
+        location:
+          "ICON Main Auditorium",
+
+        description:
+          "A special celebration honouring outstanding student achievements, results and competitive examination success.",
+
+        image:
+          "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=550&fit=crop"
+      },
+
+
+      {
+        title:
+          "IPMAT & CUET Preparation Seminar",
+
+        category:
+          "Seminar",
+
+        date:
+          "14 September 2026",
+
+        time:
+          "11:30 AM",
+
+        location:
+          "ICON Campus, Bhilwara",
+
+        description:
+          "Understand the latest examination pattern, preparation roadmap, time management and admission process.",
+
+        image:
+          "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=550&fit=crop"
+      },
+
+
+      {
+        title:
+          "Free Live Demo Class",
+
+        category:
+          "Demo Class",
+
+        date:
+          "21 September 2026",
+
+        time:
+          "5:00 PM",
+
+        location:
+          "ICON Smart Classroom",
+
+        description:
+          "Attend an interactive live class and experience ICON teaching methods, mentors and study resources.",
+
+        image:
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=550&fit=crop"
+      }
+
+    ];
+
+
+    function createIconEventCard(
+      event,
+      index
+    ) {
+
+      return `
+        <article class="icon-event-card">
+
+          <div class="icon-event-card-image">
+
+            <img
+              src="${event.image}"
+              alt="${event.title}"
+              loading="lazy"
+            >
+
+            <span class="icon-event-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="icon-event-category">
+              ${event.category}
+            </span>
+
+          </div>
+
+
+          <div class="icon-event-card-content">
+
+            <div class="icon-event-date">
+
+              <i class="fa-regular fa-calendar"></i>
+
+              ${event.date}
+
+            </div>
+
+
+            <h3>
+              ${event.title}
+            </h3>
+
+
+            <p class="icon-event-description">
+              ${event.description}
+            </p>
+
+
+            <div class="icon-event-meta">
+
+              <span>
+
+                <i class="fa-regular fa-clock"></i>
+
+                ${event.time}
+
+              </span>
+
+
+              <span>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                ${event.location}
+
+              </span>
+
+            </div>
+
+
+            <div class="icon-event-card-bottom">
+
+              <a
+                href="#contact"
+                class="icon-event-details-link"
+                data-event="${event.title}"
+              >
+
+                <i class="fa-regular fa-circle-play"></i>
+
+                View Details
+
+              </a>
+
+
+              <a
+                href="#contact"
+                class="icon-event-arrow"
+                data-event="${event.title}"
+                aria-label="View ${event.title}"
+              >
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+      `;
+    }
+
+
+    function renderIconEvents() {
+
+      const iconEventsTrack =
+        document.getElementById(
+          "iconEventsTrack"
+        );
+
+      if (!iconEventsTrack) {
+        return;
+      }
+
+
+      const iconEventCards =
+        iconEvents
+          .map(createIconEventCard)
+          .join("");
+
+
+      /*
+        Cards ko duplicate kiya gaya hai,
+        taaki slider continuously chale.
+      */
+
+      iconEventsTrack.innerHTML =
+        iconEventCards +
+        iconEventCards;
+
+
+      iconEventsTrack
+        .querySelectorAll("[data-event]")
+        .forEach(function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              const eventName =
+                this.getAttribute(
+                  "data-event"
+                );
+
+
+              if (
+                typeof window.openBookingForm ===
+                "function"
+              ) {
+                window.openBookingForm(
+                  eventName
+                );
+              }
+
+            }
+          );
+
+        });
+    }
+
+
+    function openIconEventForm(
+      eventName
+    ) {
 
       if (
         typeof window.openBookingForm ===
         "function"
       ) {
-        window.openBookingForm(eventName);
+        window.openBookingForm(
+          eventName
+        );
+
         return;
       }
 
+
       const contactSection =
-        document.getElementById("contact");
+        document.getElementById(
+          "contact"
+        );
+
 
       if (contactSection) {
+
         contactSection.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
+
       }
     }
-  </script>
 
-</section>
 
+    window.openIconEventForm =
+      openIconEventForm;
+
+
+    if (
+      document.readyState ===
+      "loading"
+    ) {
+
+      document.addEventListener(
+        "DOMContentLoaded",
+        renderIconEvents
+      );
+
+    } else {
+
+      renderIconEvents();
+
+    }
+
+  })();
+</script>
 <!-- =========================================
      EVENTS SECTION END
 ========================================= -->
@@ -5303,6 +4992,70 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<style>
+  /* =========================================
+     MENTOR SLIDER KO NORMAL GRID MEIN CONVERT
+  ========================================== */
+
+  #mentors .mentor-slider-shell {
+    width: 100%;
+    overflow: visible !important;
+  }
+
+  #mentors .mentor-outer {
+    width: 100%;
+    overflow: visible !important;
+    cursor: default !important;
+  }
+
+  #mentors .mentor-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #mentors .mentor-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 100%;
+  }
+
+  /* Slider ke arrows aur dots hide */
+  #mentors .mentor-nav {
+    display: none !important;
+  }
+
+  /* =========================================
+     RESPONSIVE
+  ========================================== */
+
+  @media (max-width: 1100px) {
+    #mentors .mentor-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      gap: 22px !important;
+    }
+  }
+
+  @media (max-width: 850px) {
+    #mentors .mentor-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 20px !important;
+    }
+  }
+
+  @media (max-width: 580px) {
+    #mentors .mentor-grid {
+      grid-template-columns: 1fr !important;
+      gap: 18px !important;
+    }
+  }
+</style>
+
 
 <!-- ── Testimonials ── -->
 <section class="testimonials" id="testimonials">
@@ -5418,10 +5171,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <img src="logo.png" alt="ICON Institute" class="logo-img">
       <p>Building future achievers through result-driven coaching, expert mentorship and a culture of discipline.</p>
       <div class="fsoc">
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/iconcareerseducation/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/results?search_query=icon+careers" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/iconcareers?utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
     <div>
@@ -5446,8 +5198,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <h5>Contact</h5>
       <ul>
         <li>ICON Campus, Pur Road, Bhilwara, Rajasthan</li>
-        <li>+91 98XXX XXXXX</li>
-        <li>admissions@iconinstitute.in</li>
+        <li>+91 94143 72288</li>
+        <li>anilgchoudhary@gmail.com</li>
       </ul>
     </div>
   </div>
