@@ -197,6 +197,72 @@ header{
 }
 .slider-arrows button:hover{background:rgba(255,255,255,.3);}
 
+
+/* Slider arrows ko bottom center par shift karega */
+.slider {
+  position: relative;
+}
+
+.slider-arrows {
+  position: absolute;
+  left: 50%;
+  right: auto;
+  top: auto;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slider-arrows button {
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(15, 23, 42, 0.82);
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.slider-arrows button:hover {
+  transform: translateY(-2px);
+  background: #0f172a;
+}
+
+.slider-arrows {
+  position: absolute;
+  left: auto;
+  right: 18px;
+  top: auto;
+  bottom: 18px;
+  transform: none;
+  z-index: 20;
+
+  display: flex;
+  gap: 10px;
+}
+
+
+
 /* video */
 .video-panel{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:#000;display:flex;flex-direction:column;position:relative;}
 .video-frame{position:relative;overflow:hidden;flex:1;min-height:0;aspect-ratio:16/10;}
