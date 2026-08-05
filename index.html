@@ -166,6 +166,8 @@
     background: #fff;
   }
 
+  
+
   .hero-fluid-container .hero-bottom.hero-building .hero-text p {
     max-width: 100%;
   }
@@ -244,6 +246,13 @@
     -webkit-backdrop-filter: none !important;
   }
 
+  /* Cube ki width aur height kam ki */
+  #cube-wrap {
+    width: 240px !important;
+    height: 240px !important;
+    perspective: 900px !important;
+  }
+
   #cube {
     width: 100%;
     height: 100%;
@@ -253,68 +262,73 @@
     animation: spinCube 8s linear 1 forwards;
   }
 
-  .intro-cube-face {
-    position: absolute;
-    inset: 0;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.intro-cube-face {
+  position: absolute;
+  inset: 0;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    /* Solid background se beech wali blur line remove */
-    background: #0f172a !important;
-    background-image: none !important;
+  /* Image ke peeche ka background bahut kam */
+  background: rgba(15, 23, 42, 0.08) !important;
+  background-image: none !important;
 
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+  /* Border bhi almost invisible */
+  border: 1px solid rgba(255, 255, 255, 0.035);
 
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 
-  .intro-cube-face img {
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
-    box-shadow: none !important;
-    filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+.intro-cube-face img {
+  display: block;
+  max-width: 76%;
+  max-height: 76%;
+  object-fit: contain;
 
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
+  /* Image clear rahegi */
+  opacity: 0.9;
 
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+  /* Cube size 240px hai, isliye translateZ 120px */
   .intro-cube-front {
-    transform: rotateY(0deg) translateZ(150px);
+    transform: rotateY(0deg) translateZ(120px);
   }
 
   .intro-cube-back {
-    transform: rotateY(180deg) translateZ(150px);
+    transform: rotateY(180deg) translateZ(120px);
   }
 
   .intro-cube-left {
-    transform: rotateY(-90deg) translateZ(150px);
+    transform: rotateY(-90deg) translateZ(120px);
   }
 
   .intro-cube-right {
-    transform: rotateY(90deg) translateZ(150px);
+    transform: rotateY(90deg) translateZ(120px);
   }
 
   .intro-cube-top {
-    transform: rotateX(90deg) translateZ(150px);
+    transform: rotateX(90deg) translateZ(120px);
   }
 
   .intro-cube-bottom {
-    transform: rotateX(-90deg) translateZ(150px);
+    transform: rotateX(-90deg) translateZ(120px);
   }
 
   /* Rotation ke baad parda open */
@@ -330,8 +344,51 @@
     opacity: 0;
     transition: opacity 0.25s ease;
   }
-</style>
 
+  /* Mobile responsive cube */
+  @media (max-width: 600px) {
+    #cube-wrap {
+      width: 190px !important;
+      height: 190px !important;
+      perspective: 750px !important;
+    }
+
+    .intro-cube-face {
+      width: 190px;
+      height: 190px;
+    }
+
+    .intro-cube-front {
+      transform: rotateY(0deg) translateZ(95px);
+    }
+
+    .intro-cube-back {
+      transform: rotateY(180deg) translateZ(95px);
+    }
+
+    .intro-cube-left {
+      transform: rotateY(-90deg) translateZ(95px);
+    }
+
+    .intro-cube-right {
+      transform: rotateY(90deg) translateZ(95px);
+    }
+
+    .intro-cube-top {
+      transform: rotateX(90deg) translateZ(95px);
+    }
+
+    .intro-cube-bottom {
+      transform: rotateX(-90deg) translateZ(95px);
+    }
+
+    .intro-cube-face img {
+      max-width: 74%;
+      max-height: 74%;
+      opacity: 0.72;
+    }
+  }
+</style>
 
 <!-- Intro Overlay -->
 <div
@@ -361,7 +418,7 @@
       background: #0f172a;
       z-index: 2;
       transform: translateX(0);
-      transition: transform 0.8s cubic-bezier(.77,0,.175,1);
+      transition: transform 0.8s cubic-bezier(.77, 0, .175, 1);
     "
   ></div>
 
@@ -377,7 +434,7 @@
       background: #0f172a;
       z-index: 2;
       transform: translateX(0);
-      transition: transform 0.8s cubic-bezier(.77,0,.175,1);
+      transition: transform 0.8s cubic-bezier(.77, 0, .175, 1);
     "
   ></div>
 
@@ -387,9 +444,9 @@
     style="
       position: relative;
       z-index: 3;
-      width: 300px;
-      height: 300px;
-      perspective: 1000px;
+      width: 240px;
+      height: 240px;
+      perspective: 900px;
     "
   >
 
@@ -449,7 +506,6 @@
 
 </div>
 
-
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.getElementById("intro-overlay");
@@ -471,107 +527,475 @@
   });
 </script>
 
+<!-- ======================================
+     TOP COURSE ANNOUNCEMENT TICKER START
+======================================= -->
 
+<div class="icon-course-ticker">
 
-<!-- Header -->
+  <div class="icon-course-ticker-track">
+
+    <!-- FIRST SET -->
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      Target IPMATs–CUET 2027 Achievers Batch
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-circle-play"></i>
+      Live + Pre Recorded Classes Available
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-book-open"></i>
+      IPMAT Indore, Rohtak, JIPMAT, CUET, NPAT &amp; SET Preparation
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-square-root-variable"></i>
+      Quantitative Aptitude + Data Interpretation Courses
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-language"></i>
+      English VA–RC Self-Paced Batch
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a
+      href="#contact"
+      class="icon-ticker-item"
+      onclick="
+        if (typeof openBookingForm === 'function') {
+          openBookingForm('Free Demo Class');
+        }
+      "
+    >
+      <i class="fa-solid fa-video"></i>
+      Book Your Free Demo Class
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <!-- DUPLICATE SET FOR SMOOTH INFINITE MOVEMENT -->
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      Target IPMATs–CUET 2027 Achievers Batch
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-circle-play"></i>
+      Live + Pre Recorded Classes Available
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-book-open"></i>
+      IPMAT Indore, Rohtak, JIPMAT, CUET, NPAT &amp; SET Preparation
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-square-root-variable"></i>
+      Quantitative Aptitude + Data Interpretation Courses
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a href="#courses" class="icon-ticker-item">
+      <i class="fa-solid fa-language"></i>
+      English VA–RC Self-Paced Batch
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+    <a
+      href="#contact"
+      class="icon-ticker-item"
+      onclick="
+        if (typeof openBookingForm === 'function') {
+          openBookingForm('Free Demo Class');
+        }
+      "
+    >
+      <i class="fa-solid fa-video"></i>
+      Book Your Free Demo Class
+    </a>
+
+    <span class="icon-ticker-dot"></span>
+
+  </div>
+
+</div>
+
+<style>
+  .icon-course-ticker {
+  background: #0f172a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.icon-course-ticker::before {
+  background: linear-gradient(
+    to right,
+    #0f172a,
+    rgba(15, 23, 42, 0)
+  );
+}
+
+.icon-course-ticker::after {
+  background: linear-gradient(
+    to left,
+    #0f172a,
+    rgba(15, 23, 42, 0)
+  );
+}
+
+.icon-ticker-item {
+  color: #ffffff;
+}
+
+.icon-ticker-item i {
+  color: #ff4057;
+}
+
+.icon-ticker-dot {
+  background: #ff4057;
+}
+
+  .icon-course-ticker-track {
+    width: max-content;
+    min-width: max-content;
+
+    display: flex;
+    align-items: center;
+
+    animation: iconCourseTickerMove 38s linear infinite;
+    will-change: transform;
+  }
+
+  .icon-course-ticker:hover
+  .icon-course-ticker-track {
+    animation-play-state: paused;
+  }
+
+  .icon-ticker-item {
+    min-height: 38px;
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.015em;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease;
+  }
+
+  .icon-ticker-item:hover {
+    color: #ffffff;
+    opacity: 0.82;
+  }
+
+  .icon-ticker-item i {
+    font-size: 13px;
+    color: #ffffff;
+  }
+
+  .icon-ticker-dot {
+    width: 5px;
+    height: 5px;
+    flex: 0 0 5px;
+
+    display: block;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  @keyframes iconCourseTickerMove {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .icon-course-ticker {
+      height: 35px;
+    }
+
+    .icon-ticker-item {
+      min-height: 35px;
+      padding: 0 17px;
+      font-size: 11px;
+    }
+
+    .icon-course-ticker-track {
+      animation-duration: 30s;
+    }
+
+    .icon-course-ticker::before,
+    .icon-course-ticker::after {
+      width: 25px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .icon-course-ticker {
+      height: 34px;
+    }
+
+    .icon-ticker-item {
+      min-height: 34px;
+      padding: 0 14px;
+      font-size: 10px;
+    }
+
+    .icon-ticker-item i {
+      font-size: 11px;
+    }
+
+    .icon-course-ticker-track {
+      animation-duration: 25s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .icon-course-ticker-track {
+      animation-play-state: paused;
+    }
+  }
+</style>
+
+<!-- ======================================
+     TOP COURSE ANNOUNCEMENT TICKER END
+======================================= -->
+
+<!-- =========================
+     HEADER START
+========================= -->
+
+<!-- =========================
+     HEADER START
+========================= -->
+
 <header>
 
+  <!-- TOP BAR -->
   <div class="nav-topbar wrap">
-    <a href="past-papers.html">Past Papers</a>
-    <a href="blog.html">Blog</a>
-    <a href="#footer">Contact Us</a>
 
-    <a href="tel:+919800000000" class="call-link">
+    <a href="#courses">
+      Courses
+    </a>
+
+    <a href="#demo-classes">
+      Demo Classes
+    </a>
+
+    <a href="#free-tests">
+      Free Tests
+    </a>
+
+    <a href="#mentors">
+      Mentors
+    </a>
+
+    <a href="#success-wall">
+      Success Wall
+    </a>
+
+    <a
+      href="#contact"
+      onclick="openBookingForm('Book Demo')"
+    >
+      Book Demo
+    </a>
+
+    <a
+      href="https://web.classplusapp.com/login"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Login
+    </a>
+
+    <a
+      href="tel:+919800000000"
+      class="call-link"
+    >
       <i class="fa-solid fa-phone"></i>
       +91 98XXX XXXXX
     </a>
+
   </div>
 
+  <!-- MAIN NAVBAR -->
   <div class="wrap nav">
 
+    <!-- LOGO -->
     <a href="#home" class="logo">
-      <img src="logo.png" alt="ICON Institute" class="logo-img">
+
+      <img
+        src="logo.png"
+        alt="ICON Institute"
+        class="logo-img"
+      >
+
     </a>
 
+    <!-- MAIN NAVIGATION -->
     <ul class="nav-links" id="navLinks">
 
+      <!-- COURSES -->
       <li id="dd-courses">
 
-        <button onclick="toggleDD('dd-courses')">
+        <button
+          type="button"
+          onclick="toggleDD('dd-courses')"
+        >
           Courses
+
           <i class="fa-solid fa-chevron-down dd-chev"></i>
         </button>
 
         <div class="dropdown">
 
-          <a href="#">
+          <a href="#courses">
+
             <div class="dd-icon">
               <i class="fa-solid fa-book-open"></i>
             </div>
 
             <div class="dd-text">
-              <strong>JEE Main &amp; Advanced</strong>
-              <span>Class 11–12 · 2 Years</span>
+              <strong>
+                Target IPMATs–CUET 2027
+              </strong>
+
+              <span>
+                Achievers Batch
+              </span>
             </div>
+
           </a>
 
-          <a href="#">
+          <a href="#courses">
+
             <div class="dd-icon">
-              <i class="fa-solid fa-heart-pulse"></i>
+              <i class="fa-solid fa-circle-play"></i>
             </div>
 
             <div class="dd-text">
-              <strong>NEET UG</strong>
-              <span>Class 11–12 · 2 Years</span>
+              <strong>
+                IPMATs–CUET Self Paced
+              </strong>
+
+              <span>
+                Pre-recorded preparation
+              </span>
             </div>
+
           </a>
 
-          <a href="#">
+          <a href="#courses">
+
             <div class="dd-icon">
-              <i class="fa-solid fa-layer-group"></i>
+              <i class="fa-solid fa-calculator"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Foundation 9–10</strong>
-              <span>Class 9–10 · 2 Years</span>
+              <strong>
+                Only Quant + DI
+              </strong>
+
+              <span>
+                IPMAT and CUET preparation
+              </span>
             </div>
+
           </a>
 
-          <a href="#">
+          <a href="#courses">
+
             <div class="dd-icon">
-              <i class="fa-solid fa-desktop"></i>
+              <i class="fa-solid fa-language"></i>
             </div>
 
             <div class="dd-text">
-              <strong>CUET Prep</strong>
-              <span>Class 12 · 1 Year</span>
+              <strong>
+                Only English VA-RC
+              </strong>
+
+              <span>
+                Verbal ability preparation
+              </span>
             </div>
+
           </a>
 
           <div class="dd-divider"></div>
 
           <a href="#courses">
+
             <div class="dd-icon">
               <i class="fa-solid fa-grip"></i>
             </div>
 
             <div class="dd-text">
-              <strong>View All 10 Courses</strong>
-              <span>Explore full catalog</span>
+              <strong>
+                View All Courses
+              </strong>
+
+              <span>
+                Explore complete course catalog
+              </span>
             </div>
+
           </a>
 
         </div>
+
       </li>
 
+      <!-- OUR TEAM -->
       <li>
-        <a href="#mentors">Our Team</a>
+        <a href="#mentors">
+          Our Team
+        </a>
       </li>
 
+      <!-- DEMO CLASS -->
       <li id="dd-demo">
 
-        <button onclick="toggleDD('dd-demo')">
+        <button
+          type="button"
+          onclick="toggleDD('dd-demo')"
+        >
           Demo Class
+
           <i class="fa-solid fa-chevron-down dd-chev"></i>
         </button>
 
@@ -581,135 +1005,233 @@
             href="#contact"
             onclick="openBookingForm('Personal Counselling')"
           >
+
             <div class="dd-icon">
               <i class="fa-solid fa-user-check"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Personal Counselling</strong>
-              <span>1-on-1 session with our advisor</span>
+              <strong>
+                Personal Counselling
+              </strong>
+
+              <span>
+                1-on-1 session with our advisor
+              </span>
             </div>
+
           </a>
 
           <a
             href="#contact"
             onclick="openBookingForm('Live Demo Class')"
           >
+
             <div class="dd-icon">
               <i class="fa-solid fa-video"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Live Demo Class</strong>
-              <span>Join a free live session today</span>
+              <strong>
+                Live Demo Class
+              </strong>
+
+              <span>
+                Join a free live session today
+              </span>
             </div>
+
           </a>
 
         </div>
+
       </li>
 
+      <!-- RESOURCES -->
       <li id="dd-res">
 
-        <button onclick="toggleDD('dd-res')">
+        <button
+          type="button"
+          onclick="toggleDD('dd-res')"
+        >
           Resources
+
           <i class="fa-solid fa-chevron-down dd-chev"></i>
         </button>
 
         <div class="dropdown">
 
           <a href="past-papers.html">
+
             <div class="dd-icon">
               <i class="fa-solid fa-file-lines"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Past Papers</strong>
-              <span>JEE, NEET, Board archives</span>
+              <strong>
+                Past Papers
+              </strong>
+
+              <span>
+                IPMAT, CUET and entrance archives
+              </span>
             </div>
+
           </a>
 
           <a href="blog.html">
+
             <div class="dd-icon">
               <i class="fa-solid fa-pen"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Blog</strong>
-              <span>Tips, strategies, student stories</span>
+              <strong>
+                Blog
+              </strong>
+
+              <span>
+                Tips, strategies and student stories
+              </span>
             </div>
+
+          </a>
+
+          <a href="#free-tests">
+
+            <div class="dd-icon">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+
+            <div class="dd-text">
+              <strong>
+                Free Tests
+              </strong>
+
+              <span>
+                Practice tests and mock exams
+              </span>
+            </div>
+
           </a>
 
         </div>
+
       </li>
 
+      <!-- CONTACT -->
       <li>
-        <a href="#footer">Contact Us</a>
+        <a href="#footer">
+          Contact Us
+        </a>
       </li>
 
     </ul>
 
+    <!-- RIGHT SIDE CTA -->
     <div class="nav-cta">
 
-      <button
-        class="btn-book"
-        onclick="toggleDD('dd-book')"
-        style="position: relative;"
+      <div
+        class="nav-book-wrapper"
+        id="dd-book-wrapper"
       >
-        Book Now — Free
-        <i class="fa-solid fa-chevron-down dd-chev"></i>
+
+        <button
+          class="btn-book"
+          type="button"
+          onclick="toggleBookDropdown(event)"
+        >
+          Book Now — Free
+
+          <i class="fa-solid fa-chevron-down dd-chev"></i>
+        </button>
 
         <div
-          class="dropdown"
+          class="dropdown book-dropdown"
           id="dd-book"
-          style="
-            left: auto;
-            right: 0;
-            transform: none;
-            min-width: 240px;
-          "
         >
 
           <a
             href="#contact"
             onclick="openBookingForm('Personal Counselling')"
           >
+
             <div class="dd-icon">
               <i class="fa-solid fa-user-check"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Personal Counselling</strong>
-              <span>1-on-1 session with our advisor</span>
+              <strong>
+                Personal Counselling
+              </strong>
+
+              <span>
+                1-on-1 session with our advisor
+              </span>
             </div>
+
           </a>
 
           <a
             href="#contact"
             onclick="openBookingForm('Live Demo Class')"
           >
+
             <div class="dd-icon">
               <i class="fa-solid fa-video"></i>
             </div>
 
             <div class="dd-text">
-              <strong>Live Demo Class</strong>
-              <span>Reserve your free seat</span>
+              <strong>
+                Live Demo Class
+              </strong>
+
+              <span>
+                Reserve your free seat
+              </span>
             </div>
+
           </a>
 
         </div>
-      </button>
 
+      </div>
+
+      <!-- MOBILE BUTTON -->
       <button
         class="burger"
-        aria-label="Menu"
-        onclick="document.getElementById('navLinks').classList.toggle('nav-open')"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+        onclick="toggleMobileNavigation(this)"
       >
+
         <svg viewBox="0 0 24 24">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
+
+          <line
+            x1="3"
+            y1="6"
+            x2="21"
+            y2="6"
+          ></line>
+
+          <line
+            x1="3"
+            y1="12"
+            x2="21"
+            y2="12"
+          ></line>
+
+          <line
+            x1="3"
+            y1="18"
+            x2="21"
+            y2="18"
+          ></line>
+
         </svg>
+
       </button>
 
     </div>
@@ -717,6 +1239,133 @@
   </div>
 
 </header>
+
+<script>
+  function toggleMobileNavigation(button) {
+    const navLinks =
+      document.getElementById("navLinks");
+
+    if (!navLinks) {
+      return;
+    }
+
+    const isOpen =
+      navLinks.classList.toggle("nav-open");
+
+    button.setAttribute(
+      "aria-expanded",
+      String(isOpen)
+    );
+  }
+
+  function toggleBookDropdown(event) {
+    event.stopPropagation();
+
+    const wrapper =
+      document.getElementById(
+        "dd-book-wrapper"
+      );
+
+    if (!wrapper) {
+      return;
+    }
+
+    wrapper.classList.toggle("open");
+  }
+
+  document.addEventListener(
+    "click",
+    function (event) {
+      const wrapper =
+        document.getElementById(
+          "dd-book-wrapper"
+        );
+
+      if (
+        wrapper &&
+        !wrapper.contains(event.target)
+      ) {
+        wrapper.classList.remove("open");
+      }
+    }
+  );
+</script>
+
+<style>
+  /* TOP BAR LINKS */
+  .nav-topbar {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .nav-topbar > a {
+    color: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .nav-topbar > a:hover {
+    color: #ff4057;
+  }
+
+  .nav-topbar .call-link {
+    margin-left: auto;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .nav-topbar .call-link i {
+    color: #ff4057;
+  }
+
+  /* BOOK NOW DROPDOWN FIX */
+  .nav-book-wrapper {
+    position: relative;
+  }
+
+  .nav-book-wrapper .book-dropdown {
+    left: auto;
+    right: 0;
+    transform: none;
+    min-width: 260px;
+  }
+
+  .nav-book-wrapper.open .book-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 1100px) {
+    .nav-topbar {
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-topbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-topbar .call-link {
+      margin-left: 0;
+    }
+  }
+</style>
+
+<!-- =========================
+     HEADER END
+========================= -->
+
+<!-- =========================
+     HEADER END
+========================= -->
 
 
 <!-- Hero -->
@@ -1299,61 +1948,60 @@
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
+</section>
 
-
-
+<!-- ...2nd section.... -->
 
 <section>
   
-<div class="container-fluid hero-fluid-container">
+  <div class="container-fluid hero-fluid-container">
 
-  <div class="hero-bottom hero-building">
+    <div class="hero-bottom hero-building">
 
-    <div class="hero-building-image-wrap">
+      <div class="hero-building-image-wrap">
 
-      <img
-        src="img/icon.png"
-        alt="ICON Career Education Building"
-        class="hero-building-image"
-      >
+        <img
+          src="img/icon.png"
+          alt="ICON Career Education Building"
+          class="hero-building-image"
+        >
 
-    </div>
-
-    <div class="hero-text">
-
-      <div class="hero-badge">
-        <span class="pulse"></span>
-        Admissions Open 2026–27
       </div>
 
-      <h1>
-        Where Every Student
-        <br>
-        Becomes an <span class="accent">ICON</span>
-      </h1>
+      <div class="hero-text">
 
-      <p>
-        Result-driven coaching for JEE, NEET, Boards &amp; beyond —
-        expert mentors, small batches, and a track record that speaks
-        for itself.
-      </p>
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          Welcome to ICON Careers
+        </div>
 
-      <div class="hero-ctas">
+        <h1>
+          Expert Mentorship to Ace
+          <span class="accent">IPMAT • CUET</span>
+        </h1>
 
-        <a
-          href="#courses"
-          class="btn btn-primary"
-        >
-          Explore Courses
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <p>
+          IIMs, NPAT, SET, MAH-CET, Christ, Nirma, SP Jain etc.
+        </p>
 
-        <a
-          href="#why"
-          class="btn btn-ghost"
-        >
-          Why ICON?
-        </a>
+        <div class="hero-ctas">
+
+          <a
+            href="#courses"
+            class="btn btn-primary"
+          >
+            Explore Courses
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <a
+            href="#why"
+            class="btn btn-ghost"
+          >
+            Why ICON?
+          </a>
+
+        </div>
 
       </div>
 
@@ -1361,13 +2009,101 @@
 
   </div>
 
-</div>
-
 </section>
 
-
+<!-- =========================
+     COURSES SECTION START
+========================= -->
 
 <section class="courses" id="courses">
+
+  <style>
+    #courses .course-meta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    #courses .course-meta-row .course-class,
+    #courses .course-duration-top {
+      min-height: 34px;
+      padding: 7px 10px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      border: 1px solid #d9dee7;
+      border-radius: 7px;
+
+      background: #f8fafc;
+      color: #536075;
+
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #courses .course-meta-row .course-class i,
+    #courses .course-duration-top i {
+      color: #ff4057;
+      font-size: 12px;
+    }
+
+    #courses .course-bottom {
+      margin-top: auto;
+      padding-top: 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+
+      border-top: 1px solid #e6eaf0;
+    }
+
+    #courses .course-watch-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #172033;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-decoration: none;
+    }
+
+    #courses .course-watch-link i {
+      color: #ff4057;
+      font-size: 16px;
+    }
+
+    #courses .course-watch-link:hover {
+      color: #ff4057;
+    }
+
+    @media (max-width: 480px) {
+      #courses .course-meta-row {
+        gap: 6px;
+      }
+
+      #courses .course-meta-row .course-class,
+      #courses .course-duration-top {
+        padding: 7px 8px;
+        font-size: 10px;
+      }
+
+      #courses .course-watch-link {
+        max-width: 180px;
+        font-size: 11px;
+      }
+    }
+  </style>
 
   <div class="wrap">
 
@@ -1376,7 +2112,7 @@
       <div class="courses-heading">
 
         <div class="label">
-          Top 10 Programs
+          Top 8 Programs
         </div>
 
         <h2>
@@ -1405,117 +2141,149 @@
 </section>
 
 <script>
-  window.addEventListener("load", function () {
-    const courseTrack = document.getElementById("courseTrack");
-
-    if (!courseTrack) {
-      return;
-    }
+  (function () {
 
     const courses = [
+
+      /* COURSE 1 */
       {
-        title: "JEE Main & Advanced",
-        className: "Class 11–12",
-        duration: "2 Years",
-        bestFor: "Students targeting IITs, NITs and top engineering colleges.",
+        title: "Target IPMATs – CUET 2027",
+        className: "Achievers Batch",
+        duration: "Live + Pre Recorded",
+        validity: "Till July 31, 2027",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
         description:
-          "Complete Physics, Chemistry and Mathematics preparation with regular tests, doubt sessions and advanced problem-solving.",
+          "Complete Course for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
-          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
+          "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=700&h=450&fit=crop"
       },
+
+      /* COURSE 2 */
       {
-        title: "NEET UG",
-        className: "Class 11–12",
-        duration: "2 Years",
-        bestFor: "Students preparing for MBBS, BDS and medical entrance exams.",
+        title: "Target IPMATs – CUET 2027",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2027",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
         description:
-          "Focused Biology, Physics and Chemistry preparation designed around the latest NEET pattern and medical entrance strategy.",
-        image:
-          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Foundation Program",
-        className: "Class 9–10",
-        duration: "2 Years",
-        bestFor: "Students who want strong basics before JEE, NEET and Boards.",
-        description:
-          "Build strong fundamentals in Mathematics and Science while preparing early for competitive examinations and school boards.",
-        image:
-          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
-      },
-      {
-        title: "CUET Preparation",
-        className: "Class 12",
-        duration: "1 Year",
-        bestFor: "Students targeting central universities and top undergraduate colleges.",
-        description:
-          "Structured preparation for domain subjects, language tests and general aptitude with regular mock examinations.",
+          "Complete Course for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
           "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
       },
+
+      /* COURSE 3 */
       {
-        title: "CA Foundation",
-        className: "Class 11–12",
-        duration: "1 Year",
-        bestFor: "Commerce students planning to begin their Chartered Accountancy journey.",
+        title: "Target IPMATs 2027 – Only Quant + DI",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2027",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
         description:
-          "Concept-focused preparation for Accounting, Economics, Business Laws and Quantitative Aptitude with practice tests.",
+          "Learn Mathematics for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
-          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=450&fit=crop"
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
       },
+
+      /* COURSE 4 */
       {
-        title: "Board Exam Program",
-        className: "Class 11–12",
-        duration: "1 Year",
-        bestFor: "Students aiming for higher marks in school and board examinations.",
+        title: "Target IPMATs 2027 – Only English (VA-RC)",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2027",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
         description:
-          "Complete board syllabus coverage with chapter-wise practice, answer-writing improvement and regular performance analysis.",
+          "Learn English for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
-          "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&h=450&fit=crop"
+          "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&h=450&fit=crop"
       },
+
+      /* COURSE 5 */
       {
-        title: "Olympiad Preparation",
-        className: "Class 6–10",
-        duration: "1 Year",
-        bestFor: "Students interested in Olympiads, reasoning and advanced problem-solving.",
+        title: "Target IPMAT – CUET 2028",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2028",
+
+        bestFor:
+          "11th Students",
+
         description:
-          "Develop logical reasoning, scientific thinking and advanced problem-solving skills for national-level Olympiad examinations.",
+          "Comprehensive Course for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
-          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=450&fit=crop"
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
       },
+
+      /* COURSE 6 */
       {
-        title: "Banking & SSC",
-        className: "Graduates",
-        duration: "1 Year",
-        bestFor: "Graduates preparing for banking, SSC and government examinations.",
+        title: "Target IPMAT – CUET 2028",
+        className: "Foundation Batch",
+        duration: "Live + Pre Recorded",
+        validity: "Till July 31, 2028",
+
+        bestFor:
+          "11th Students",
+
         description:
-          "Exam-oriented preparation for reasoning, mathematics, English and general awareness with speed-building practice.",
-        image:
-          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Coding for Kids",
-        className: "Class 6–10",
-        duration: "6 Months",
-        bestFor: "Beginners interested in coding, logic building and practical projects.",
-        description:
-          "Learn programming fundamentals, logical thinking and practical project development through student-friendly coding lessons.",
-        image:
-          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Spoken English",
-        className: "All Students",
-        duration: "3 Months",
-        bestFor: "Students who want better speaking confidence and communication skills.",
-        description:
-          "Improve speaking confidence, vocabulary, pronunciation and everyday communication through activity-based learning sessions.",
+          "Comprehensive Course for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
         image:
           "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
+      },
+
+      /* COURSE 7 */
+      {
+        title: "Target IPMATs 2028 – Only Quant + DI",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2028",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
+        description:
+          "Learn Mathematics for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
+        image:
+          "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=700&h=450&fit=crop"
+      },
+
+      /* COURSE 8 */
+      {
+        title: "Target IPMATs 2028 – Only English (VA-RC)",
+        className: "Self Paced Batch",
+        duration: "Pre Recorded",
+        validity: "Till July 31, 2028",
+
+        bestFor:
+          "12th & Pass-Out Students",
+
+        description:
+          "Learn English for IPMAT Indore, Rohtak, JIPMAT, CUET (English + GAT), NPAT, SET, Christ & Other UG Entrances.",
+
+        image:
+          "https://images.unsplash.com/photo-1544717305-2782549b5136?w=700&h=450&fit=crop"
       }
     ];
 
     function createCourseCard(course, index) {
+
       return `
         <article class="icon-course-card">
 
@@ -1539,15 +2307,55 @@
               ${course.title}
             </h3>
 
-            <span class="course-class">
-              <i class="fa-solid fa-user-graduate"></i>
-              ${course.className}
-            </span>
+            <!-- BATCH + COURSE TYPE -->
+            <div class="course-meta-row">
 
+              <span class="course-class">
+
+                <i class="fa-solid fa-user-graduate"></i>
+
+                ${course.className}
+
+              </span>
+
+              <span class="course-duration-top">
+
+                <i class="fa-solid fa-circle-play"></i>
+
+                ${course.duration}
+
+              </span>
+
+            </div>
+
+            <!-- VALIDITY -->
+            <p
+              style="
+                margin: -5px 0 12px;
+                color: #59667a;
+                font-size: 12px;
+                font-weight: 700;
+              "
+            >
+
+              <i
+                class="fa-regular fa-calendar"
+                style="
+                  margin-right: 5px;
+                  color: #ff4057;
+                "
+              ></i>
+
+              Validity: ${course.validity}
+
+            </p>
+
+            <!-- DESCRIPTION -->
             <p class="course-description">
               ${course.description}
             </p>
 
+            <!-- BEST FOR -->
             <div class="course-best-for">
 
               <i class="fa-solid fa-bullseye"></i>
@@ -1566,21 +2374,32 @@
 
             </div>
 
+            <!-- BOTTOM -->
             <div class="course-bottom">
 
-              <span class="course-duration">
-                <i class="fa-regular fa-clock"></i>
-                Duration:
-                <strong>${course.duration}</strong>
-              </span>
+              <a
+                href="#contact"
+                class="course-watch-link"
+                data-course="${course.title}"
+              >
+
+                <i class="fa-solid fa-circle-play"></i>
+
+                <span>
+                  Watch Demos / Know More
+                </span>
+
+              </a>
 
               <a
                 href="#contact"
                 class="course-arrow"
-                onclick="openBookingForm('${course.title}')"
+                data-course="${course.title}"
                 aria-label="Enquire about ${course.title}"
               >
+
                 <i class="fa-solid fa-arrow-right"></i>
+
               </a>
 
             </div>
@@ -1591,194 +2410,73 @@
       `;
     }
 
-    const courseCards = courses
-      .map(createCourseCard)
-      .join("");
+    function renderFinalCourses() {
 
-    courseTrack.innerHTML =
-      courseCards + courseCards;
-  });
-</script>
+      const courseTrack =
+        document.getElementById("courseTrack");
 
-<script>
-  /*
-    Tumhara main.js bhi courseTrack mein cards add karta hai.
-    Ye code page load hone ke baad sirf Courses cards ko
-    requested new format mein replace karega.
-  */
-
-  window.addEventListener("load", function () {
-    const courseTrack =
-      document.getElementById("courseTrack");
-
-    if (!courseTrack) {
-      return;
-    }
-
-    const courses = [
-      {
-        title: "JEE Main & Advanced",
-        className: "Class 11–12",
-        duration: "2 Years",
-        description:
-          "Complete Physics, Chemistry and Mathematics preparation with regular tests, doubt sessions and advanced problem-solving.",
-        image:
-          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=700&h=450&fit=crop"
-      },
-      {
-        title: "NEET UG",
-        className: "Class 11–12",
-        duration: "2 Years",
-        description:
-          "Focused Biology, Physics and Chemistry preparation designed around the latest NEET pattern and medical entrance strategy.",
-        image:
-          "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Foundation Program",
-        className: "Class 9–10",
-        duration: "2 Years",
-        description:
-          "Build strong fundamentals in Mathematics and Science while preparing early for competitive examinations and school boards.",
-        image:
-          "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700&h=450&fit=crop"
-      },
-      {
-        title: "CUET Preparation",
-        className: "Class 12",
-        duration: "1 Year",
-        description:
-          "Structured preparation for domain subjects, language tests and general aptitude with regular mock examinations.",
-        image:
-          "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=450&fit=crop"
-      },
-      {
-        title: "CA Foundation",
-        className: "Class 11–12",
-        duration: "1 Year",
-        description:
-          "Concept-focused preparation for Accounting, Economics, Business Laws and Quantitative Aptitude with practice tests.",
-        image:
-          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Board Exam Program",
-        className: "Class 11–12",
-        duration: "1 Year",
-        description:
-          "Complete board syllabus coverage with chapter-wise practice, answer-writing improvement and regular performance analysis.",
-        image:
-          "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Olympiad Preparation",
-        className: "Class 6–10",
-        duration: "1 Year",
-        description:
-          "Develop logical reasoning, scientific thinking and advanced problem-solving skills for national-level Olympiad examinations.",
-        image:
-          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Banking & SSC",
-        className: "Graduates",
-        duration: "1 Year",
-        description:
-          "Exam-oriented preparation for reasoning, mathematics, English and general awareness with speed-building practice.",
-        image:
-          "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Coding for Kids",
-        className: "Class 6–10",
-        duration: "6 Months",
-        description:
-          "Learn programming fundamentals, logical thinking and practical project development through student-friendly coding lessons.",
-        image:
-          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=450&fit=crop"
-      },
-      {
-        title: "Spoken English",
-        className: "All Students",
-        duration: "3 Months",
-        description:
-          "Improve speaking confidence, vocabulary, pronunciation and everyday communication through activity-based learning sessions.",
-        image:
-          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=700&h=450&fit=crop"
+      if (!courseTrack) {
+        return;
       }
-    ];
 
-    function createCourseCard(course, index) {
-      return `
-        <article class="icon-course-card">
+      const courseCards =
+        courses
+          .map(createCourseCard)
+          .join("");
 
-          <div class="course-image">
+      /*
+        Cards ko do baar repeat kiya gaya hai
+        taaki marquee continuously chale.
+      */
 
-            <img
-              src="${course.image}"
-              alt="${course.title}"
-              loading="lazy"
-            >
+      courseTrack.innerHTML =
+        courseCards + courseCards;
 
-            <span class="course-number">
-              ${String(index + 1).padStart(2, "0")}
-            </span>
+      const courseLinks =
+        courseTrack.querySelectorAll(
+          "[data-course]"
+        );
 
-          </div>
+      courseLinks.forEach(function (link) {
 
-          <div class="course-content">
+        link.addEventListener(
+          "click",
+          function () {
 
-            <h3 class="course-title">
-              ${course.title}
-            </h3>
+            const courseTitle =
+              this.getAttribute("data-course");
 
-            <p class="course-description">
-              ${course.description}
-            </p>
+            if (
+              typeof window.openBookingForm ===
+              "function"
+            ) {
+              window.openBookingForm(courseTitle);
+            }
 
-            <span class="course-class">
-              <i class="fa-solid fa-user-graduate"></i>
-              ${course.className}
-            </span>
+          }
+        );
 
-            <div class="course-bottom">
-
-              <span class="course-duration">
-                <i class="fa-regular fa-clock"></i>
-                Duration:
-                <strong>${course.duration}</strong>
-              </span>
-
-              <a
-                href="#contact"
-                class="course-arrow"
-                onclick="openBookingForm('${course.title}')"
-                aria-label="Enquire about ${course.title}"
-              >
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-      `;
+      });
     }
 
-    /*
-      Cards ko twice repeat kiya hai taaki marquee
-      continuously smooth chale.
-    */
+    window.addEventListener(
+      "load",
+      function () {
 
-    const courseCards = courses
-      .map(createCourseCard)
-      .join("");
+        setTimeout(
+          renderFinalCourses,
+          500
+        );
 
-    courseTrack.innerHTML =
-      courseCards + courseCards;
-  });
+      }
+    );
+
+  })();
 </script>
+
+<!-- =========================
+     COURSES SECTION END
+========================= -->
 
 <!-- Media -->
 <section class="media-sec" id="media">
@@ -1880,8 +2578,6 @@
 </section>
 
 
-
-
 <script>
   window.addEventListener("load", function () {
     const courseTrack = document.getElementById("courseTrack");
@@ -2077,6 +2773,1271 @@
       courseCards + courseCards;
   });
 </script>
+
+
+<!-- =========================================
+     EVENTS SECTION START
+========================================= -->
+
+<section class="icon-events-section" id="events">
+
+  <style>
+    .icon-events-section,
+    .icon-events-section * {
+      box-sizing: border-box;
+    }
+
+    .icon-events-section {
+      position: relative;
+      width: 100%;
+      padding: 100px 0;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(255, 64, 87, 0.08),
+          transparent 32%
+        ),
+        #f8fafc;
+    }
+
+    .icon-events-section::before {
+      content: "";
+      position: absolute;
+      top: -160px;
+      left: -160px;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.035);
+      pointer-events: none;
+    }
+
+    .icon-events-wrap {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADING
+    ========================= */
+
+    .icon-events-heading-row {
+      margin-bottom: 42px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .icon-events-heading-content {
+      max-width: 720px;
+    }
+
+    .icon-events-label {
+      width: fit-content;
+      min-height: 32px;
+      margin-bottom: 14px;
+      padding: 7px 13px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      border: 1px solid rgba(255, 64, 87, 0.2);
+      border-radius: 999px;
+
+      background: rgba(255, 64, 87, 0.07);
+      color: #ff4057;
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .icon-events-label::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: #ff4057;
+      box-shadow: 0 0 0 5px rgba(255, 64, 87, 0.1);
+    }
+
+    .icon-events-heading-content h2 {
+      margin: 0 0 14px;
+
+      color: #172033;
+      font-size: clamp(34px, 4vw, 54px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .icon-events-heading-content h2 span {
+      color: #ff4057;
+    }
+
+    .icon-events-heading-content p {
+      max-width: 650px;
+      margin: 0;
+
+      color: #748096;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .icon-events-view-all {
+      min-height: 48px;
+      padding: 12px 20px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      flex: 0 0 auto;
+
+      border: 1px solid #dce2eb;
+      border-radius: 10px;
+
+      background: #ffffff;
+      color: #172033;
+
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .icon-events-view-all i {
+      color: #ff4057;
+      transition: transform 0.25s ease;
+    }
+
+    .icon-events-view-all:hover {
+      transform: translateY(-2px);
+      border-color: #ff4057;
+      background: #ff4057;
+      color: #ffffff;
+    }
+
+    .icon-events-view-all:hover i {
+      color: #ffffff;
+      transform: translateX(3px);
+    }
+
+    /* =========================
+       FEATURED EVENT
+    ========================= */
+
+    .icon-featured-event {
+      position: relative;
+      min-height: 420px;
+      margin-bottom: 26px;
+
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+
+      overflow: hidden;
+      border: 1px solid #e2e7ef;
+      border-radius: 24px;
+
+      background: #ffffff;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.09);
+    }
+
+    .icon-featured-event-image {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .icon-featured-event-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(15, 23, 42, 0.03),
+          rgba(15, 23, 42, 0.34)
+        );
+      pointer-events: none;
+    }
+
+    .icon-featured-event-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+
+      transition: transform 0.65s ease;
+    }
+
+    .icon-featured-event:hover
+    .icon-featured-event-image img {
+      transform: scale(1.045);
+    }
+
+    .icon-featured-event-date {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      z-index: 3;
+
+      width: 76px;
+      min-height: 82px;
+      padding: 11px 8px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255, 255, 255, 0.38);
+      border-radius: 15px;
+
+      background: rgba(255, 255, 255, 0.94);
+      color: #172033;
+
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .icon-featured-event-date strong {
+      color: #ff4057;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .icon-featured-event-date span {
+      margin-top: 5px;
+      color: #526078;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .icon-featured-badge {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 3;
+
+      min-height: 34px;
+      padding: 8px 12px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+
+      background: rgba(15, 23, 42, 0.82);
+      color: #ffffff;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .icon-featured-badge i {
+      color: #ff4057;
+    }
+
+    .icon-featured-event-content {
+      padding: 44px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .icon-event-status {
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 7px 11px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      border-radius: 999px;
+
+      background: rgba(34, 197, 94, 0.1);
+      color: #15803d;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .icon-event-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.11);
+    }
+
+    .icon-featured-event-content h3 {
+      margin: 0 0 16px;
+
+      color: #172033;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -0.035em;
+    }
+
+    .icon-featured-event-content > p {
+      margin: 0 0 24px;
+
+      color: #748096;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .icon-featured-meta {
+      margin-bottom: 28px;
+
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .icon-featured-meta span {
+      min-height: 38px;
+      padding: 9px 12px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      border: 1px solid #e2e7ef;
+      border-radius: 9px;
+
+      background: #f8fafc;
+      color: #59667c;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .icon-featured-meta i {
+      color: #ff4057;
+    }
+
+    .icon-featured-event-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .icon-event-primary-button,
+    .icon-event-secondary-button {
+      min-height: 48px;
+      padding: 12px 18px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      border-radius: 10px;
+
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .icon-event-primary-button {
+      border: 1px solid #ff4057;
+      background: #ff4057;
+      color: #ffffff;
+      box-shadow: 0 12px 25px rgba(255, 64, 87, 0.2);
+    }
+
+    .icon-event-primary-button:hover {
+      transform: translateY(-2px);
+      background: #e9364d;
+    }
+
+    .icon-event-secondary-button {
+      border: 1px solid #dce2eb;
+      background: #ffffff;
+      color: #172033;
+    }
+
+    .icon-event-secondary-button i {
+      color: #ff4057;
+    }
+
+    .icon-event-secondary-button:hover {
+      transform: translateY(-2px);
+      border-color: #ff4057;
+      color: #ff4057;
+    }
+
+    /* =========================
+       EVENT CARDS
+    ========================= */
+
+    .icon-events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .icon-event-card {
+      min-width: 0;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid #e2e7ef;
+      border-radius: 18px;
+
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .icon-event-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 64, 87, 0.28);
+      box-shadow: 0 22px 45px rgba(15, 23, 42, 0.11);
+    }
+
+    .icon-event-card-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #e9edf3;
+    }
+
+    .icon-event-card-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 45%,
+          rgba(15, 23, 42, 0.5)
+        );
+      pointer-events: none;
+    }
+
+    .icon-event-card-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+    .icon-event-card:hover
+    .icon-event-card-image img {
+      transform: scale(1.055);
+    }
+
+    .icon-event-card-date {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 3;
+
+      width: 60px;
+      min-height: 66px;
+      padding: 8px 6px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background: rgba(255, 255, 255, 0.95);
+      color: #172033;
+
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+    }
+
+    .icon-event-card-date strong {
+      color: #ff4057;
+      font-size: 23px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .icon-event-card-date span {
+      margin-top: 4px;
+      color: #69758a;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .icon-event-category {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      z-index: 3;
+
+      min-height: 30px;
+      padding: 7px 10px;
+
+      display: inline-flex;
+      align-items: center;
+
+      border-radius: 999px;
+
+      background: rgba(15, 23, 42, 0.84);
+      color: #ffffff;
+
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+    }
+
+    .icon-event-card-content {
+      min-height: 255px;
+      padding: 23px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icon-event-card-content h3 {
+      margin: 0 0 11px;
+
+      color: #172033;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    .icon-event-card-content > p {
+      margin: 0 0 18px;
+
+      color: #748096;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .icon-event-meta-list {
+      margin-bottom: 20px;
+
+      display: grid;
+      gap: 9px;
+    }
+
+    .icon-event-meta-list span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      color: #5e6b80;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .icon-event-meta-list i {
+      width: 15px;
+      color: #ff4057;
+      text-align: center;
+    }
+
+    .icon-event-card-footer {
+      margin-top: auto;
+      padding-top: 16px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      border-top: 1px solid #e7ebf1;
+    }
+
+    .icon-event-details-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #172033;
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+
+      transition: color 0.25s ease;
+    }
+
+    .icon-event-details-link i {
+      color: #ff4057;
+      font-size: 14px;
+    }
+
+    .icon-event-details-link:hover {
+      color: #ff4057;
+    }
+
+    .icon-event-arrow {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255, 64, 87, 0.22);
+      border-radius: 50%;
+
+      background: rgba(255, 64, 87, 0.07);
+      color: #ff4057;
+      text-decoration: none;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .icon-event-arrow:hover {
+      transform: translateX(3px);
+      background: #ff4057;
+      color: #ffffff;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1024px) {
+      .icon-events-section {
+        padding: 85px 0;
+      }
+
+      .icon-featured-event {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .icon-featured-event-content {
+        padding: 32px;
+      }
+
+      .icon-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .icon-event-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 11px);
+        justify-self: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .icon-events-section {
+        padding: 70px 0;
+      }
+
+      .icon-events-wrap {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .icon-events-heading-row {
+        align-items: flex-start;
+      }
+
+      .icon-events-heading-content h2 {
+        font-size: 38px;
+      }
+
+      .icon-featured-event {
+        grid-template-columns: 1fr;
+      }
+
+      .icon-featured-event-image {
+        min-height: 320px;
+      }
+
+      .icon-featured-event-content {
+        padding: 30px;
+      }
+
+      .icon-events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .icon-event-card:last-child {
+        grid-column: auto;
+        width: 100%;
+      }
+
+      .icon-event-card {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+      }
+
+      .icon-event-card-image {
+        height: 100%;
+        min-height: 280px;
+      }
+
+      .icon-event-card-content {
+        min-height: 280px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .icon-events-heading-row {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .icon-events-view-all {
+        width: 100%;
+      }
+
+      .icon-featured-event-image {
+        min-height: 260px;
+      }
+
+      .icon-featured-event-content {
+        padding: 24px 20px;
+      }
+
+      .icon-featured-event-content h3 {
+        font-size: 29px;
+      }
+
+      .icon-featured-event-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .icon-event-primary-button,
+      .icon-event-secondary-button {
+        width: 100%;
+      }
+
+      .icon-event-card {
+        display: flex;
+      }
+
+      .icon-event-card-image {
+        height: 220px;
+        min-height: 220px;
+      }
+
+      .icon-event-card-content {
+        min-height: 255px;
+        padding: 21px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .icon-events-section {
+        padding: 58px 0;
+      }
+
+      .icon-events-heading-content h2 {
+        font-size: 32px;
+      }
+
+      .icon-events-heading-content p {
+        font-size: 14px;
+      }
+
+      .icon-featured-event-date {
+        top: 15px;
+        left: 15px;
+        width: 65px;
+        min-height: 72px;
+      }
+
+      .icon-featured-event-date strong {
+        font-size: 25px;
+      }
+
+      .icon-featured-badge {
+        right: 15px;
+        bottom: 15px;
+      }
+
+      .icon-featured-meta {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .icon-featured-meta span {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <div class="icon-events-wrap">
+
+    <!-- SECTION HEADING -->
+
+    <div class="icon-events-heading-row">
+
+      <div class="icon-events-heading-content">
+
+        <div class="icon-events-label">
+          Campus Events
+        </div>
+
+        <h2>
+          Learn, compete and
+          <span>celebrate together</span>
+        </h2>
+
+        <p>
+          Explore academic workshops, student activities, competitions,
+          seminars and special events happening at ICON Career Education.
+        </p>
+
+      </div>
+
+      <a
+        href="#contact"
+        class="icon-events-view-all"
+        onclick="openIconEventForm('All Upcoming Events')"
+      >
+        View All Events
+
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+    <!-- FEATURED EVENT -->
+
+    <article class="icon-featured-event">
+
+      <div class="icon-featured-event-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1100&h=750&fit=crop"
+          alt="ICON Career Guidance Seminar"
+          loading="lazy"
+        >
+
+        <div class="icon-featured-event-date">
+
+          <strong>
+            18
+          </strong>
+
+          <span>
+            August
+          </span>
+
+        </div>
+
+        <div class="icon-featured-badge">
+
+          <i class="fa-solid fa-star"></i>
+
+          Featured Event
+
+        </div>
+
+      </div>
+
+      <div class="icon-featured-event-content">
+
+        <div class="icon-event-status">
+          Registrations Open
+        </div>
+
+        <h3>
+          Career Guidance &amp; Scholarship Seminar 2026
+        </h3>
+
+        <p>
+          Join ICON experts for a complete guidance session covering
+          competitive examinations, career opportunities, preparation
+          strategies and available scholarship programs.
+        </p>
+
+        <div class="icon-featured-meta">
+
+          <span>
+            <i class="fa-regular fa-calendar"></i>
+            18 August 2026
+          </span>
+
+          <span>
+            <i class="fa-regular fa-clock"></i>
+            10:00 AM
+          </span>
+
+          <span>
+            <i class="fa-solid fa-location-dot"></i>
+            ICON Campus, Bhilwara
+          </span>
+
+        </div>
+
+        <div class="icon-featured-event-actions">
+
+          <a
+            href="#contact"
+            class="icon-event-primary-button"
+            onclick="openIconEventForm('Career Guidance & Scholarship Seminar 2026')"
+          >
+            <i class="fa-solid fa-ticket"></i>
+            Register Now
+          </a>
+
+          <a
+            href="#contact"
+            class="icon-event-secondary-button"
+            onclick="openIconEventForm('Career Guidance & Scholarship Seminar 2026')"
+          >
+            <i class="fa-regular fa-circle-play"></i>
+            Know More
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- EVENT CARDS -->
+
+    <div class="icon-events-grid">
+
+      <!-- EVENT CARD 1 -->
+
+      <article class="icon-event-card">
+
+        <div class="icon-event-card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
+            alt="JEE and NEET strategy workshop"
+            loading="lazy"
+          >
+
+          <div class="icon-event-card-date">
+
+            <strong>
+              24
+            </strong>
+
+            <span>
+              August
+            </span>
+
+          </div>
+
+          <span class="icon-event-category">
+            Workshop
+          </span>
+
+        </div>
+
+        <div class="icon-event-card-content">
+
+          <h3>
+            JEE &amp; NEET Success Strategy Workshop
+          </h3>
+
+          <p>
+            Learn practical preparation strategies, revision planning
+            and test-taking techniques from experienced ICON mentors.
+          </p>
+
+          <div class="icon-event-meta-list">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              11:00 AM – 1:00 PM
+            </span>
+
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              Seminar Hall, ICON Campus
+            </span>
+
+          </div>
+
+          <div class="icon-event-card-footer">
+
+            <a
+              href="#contact"
+              class="icon-event-details-link"
+              onclick="openIconEventForm('JEE & NEET Success Strategy Workshop')"
+            >
+              <i class="fa-regular fa-circle-play"></i>
+              View Details
+            </a>
+
+            <a
+              href="#contact"
+              class="icon-event-arrow"
+              onclick="openIconEventForm('JEE & NEET Success Strategy Workshop')"
+              aria-label="View JEE and NEET workshop details"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- EVENT CARD 2 -->
+
+      <article class="icon-event-card">
+
+        <div class="icon-event-card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop"
+            alt="ICON scholarship test"
+            loading="lazy"
+          >
+
+          <div class="icon-event-card-date">
+
+            <strong>
+              31
+            </strong>
+
+            <span>
+              August
+            </span>
+
+          </div>
+
+          <span class="icon-event-category">
+            Scholarship Test
+          </span>
+
+        </div>
+
+        <div class="icon-event-card-content">
+
+          <h3>
+            ICON Talent &amp; Scholarship Test
+          </h3>
+
+          <p>
+            Students can test their academic potential and become
+            eligible for performance-based ICON scholarships.
+          </p>
+
+          <div class="icon-event-meta-list">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              9:30 AM – 12:00 PM
+            </span>
+
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              ICON Examination Centre
+            </span>
+
+          </div>
+
+          <div class="icon-event-card-footer">
+
+            <a
+              href="#contact"
+              class="icon-event-details-link"
+              onclick="openIconEventForm('ICON Talent & Scholarship Test')"
+            >
+              <i class="fa-regular fa-circle-play"></i>
+              View Details
+            </a>
+
+            <a
+              href="#contact"
+              class="icon-event-arrow"
+              onclick="openIconEventForm('ICON Talent & Scholarship Test')"
+              aria-label="View ICON scholarship test details"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <!-- EVENT CARD 3 -->
+
+      <article class="icon-event-card">
+
+        <div class="icon-event-card-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=800&h=600&fit=crop"
+            alt="ICON student achievers celebration"
+            loading="lazy"
+          >
+
+          <div class="icon-event-card-date">
+
+            <strong>
+              07
+            </strong>
+
+            <span>
+              September
+            </span>
+
+          </div>
+
+          <span class="icon-event-category">
+            Celebration
+          </span>
+
+        </div>
+
+        <div class="icon-event-card-content">
+
+          <h3>
+            Achievers Meet &amp; Student Felicitation
+          </h3>
+
+          <p>
+            A special celebration honoring outstanding student
+            achievements, academic results and competitive exam success.
+          </p>
+
+          <div class="icon-event-meta-list">
+
+            <span>
+              <i class="fa-regular fa-clock"></i>
+              4:00 PM – 6:30 PM
+            </span>
+
+            <span>
+              <i class="fa-solid fa-location-dot"></i>
+              ICON Main Auditorium
+            </span>
+
+          </div>
+
+          <div class="icon-event-card-footer">
+
+            <a
+              href="#contact"
+              class="icon-event-details-link"
+              onclick="openIconEventForm('Achievers Meet & Student Felicitation')"
+            >
+              <i class="fa-regular fa-circle-play"></i>
+              View Details
+            </a>
+
+            <a
+              href="#contact"
+              class="icon-event-arrow"
+              onclick="openIconEventForm('Achievers Meet & Student Felicitation')"
+              aria-label="View achievers meet details"
+            >
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+  <script>
+    /*
+      Existing website mein openBookingForm function hai,
+      to event click par wahi form open hoga.
+    */
+
+    function openIconEventForm(eventName) {
+
+      if (
+        typeof window.openBookingForm ===
+        "function"
+      ) {
+        window.openBookingForm(eventName);
+        return;
+      }
+
+      const contactSection =
+        document.getElementById("contact");
+
+      if (contactSection) {
+        contactSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  </script>
+
+</section>
+
+<!-- =========================================
+     EVENTS SECTION END
+========================================= -->
 
 
 <!-- ── Why ── -->
