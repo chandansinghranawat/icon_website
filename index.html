@@ -219,10 +219,12 @@
     }
   }
 
+
   #intro-overlay,
   #intro-overlay * {
     box-sizing: border-box;
   }
+
 
   /* Purane CSS se aane wali blur/diagonal layer remove */
   #intro-overlay::before,
@@ -235,6 +237,7 @@
     display: none !important;
   }
 
+
   #cube-wrap,
   #cube {
     background: transparent !important;
@@ -246,12 +249,14 @@
     -webkit-backdrop-filter: none !important;
   }
 
+
   /* Cube ki width aur height kam ki */
   #cube-wrap {
     width: 240px !important;
     height: 240px !important;
     perspective: 900px !important;
   }
+
 
   #cube {
     width: 100%;
@@ -262,88 +267,102 @@
     animation: spinCube 8s linear 1 forwards;
   }
 
-.intro-cube-face {
-  position: absolute;
-  inset: 0;
-  width: 240px;
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  /* Image ke peeche ka background bahut kam */
-  background: rgba(15, 23, 42, 0.08) !important;
-  background-image: none !important;
+  .intro-cube-face {
+    position: absolute;
+    inset: 0;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  /* Border bhi almost invisible */
-  border: 1px solid rgba(255, 255, 255, 0.035);
+    /* SIRF YE BACKGROUND WHITE KIYA HAI */
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
 
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+    /* Border same rakha hai */
+    border: 1px solid rgba(255, 255, 255, 0.035);
 
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 
-.intro-cube-face img {
-  display: block;
-  max-width: 76%;
-  max-height: 76%;
-  object-fit: contain;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 
-  /* Image clear rahegi */
-  opacity: 0.9;
 
-  box-shadow: none !important;
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  .intro-cube-face img {
+    display: block;
+    max-width: 76%;
+    max-height: 76%;
+    object-fit: contain;
 
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
+    /* Image clear rahegi */
+    opacity: 0.9;
+
+    box-shadow: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+
   /* Cube size 240px hai, isliye translateZ 120px */
   .intro-cube-front {
     transform: rotateY(0deg) translateZ(120px);
   }
 
+
   .intro-cube-back {
     transform: rotateY(180deg) translateZ(120px);
   }
+
 
   .intro-cube-left {
     transform: rotateY(-90deg) translateZ(120px);
   }
 
+
   .intro-cube-right {
     transform: rotateY(90deg) translateZ(120px);
   }
+
 
   .intro-cube-top {
     transform: rotateX(90deg) translateZ(120px);
   }
 
+
   .intro-cube-bottom {
     transform: rotateX(-90deg) translateZ(120px);
   }
+
 
   /* Rotation ke baad parda open */
   #intro-overlay.open-curtains #curt-left {
     transform: translateX(-100%);
   }
 
+
   #intro-overlay.open-curtains #curt-right {
     transform: translateX(100%);
   }
+
 
   #intro-overlay.open-curtains #cube-wrap {
     opacity: 0;
     transition: opacity 0.25s ease;
   }
+
 
   /* Mobile responsive cube */
   @media (max-width: 600px) {
@@ -353,34 +372,42 @@
       perspective: 750px !important;
     }
 
+
     .intro-cube-face {
       width: 190px;
       height: 190px;
     }
 
+
     .intro-cube-front {
       transform: rotateY(0deg) translateZ(95px);
     }
+
 
     .intro-cube-back {
       transform: rotateY(180deg) translateZ(95px);
     }
 
+
     .intro-cube-left {
       transform: rotateY(-90deg) translateZ(95px);
     }
+
 
     .intro-cube-right {
       transform: rotateY(90deg) translateZ(95px);
     }
 
+
     .intro-cube-top {
       transform: rotateX(90deg) translateZ(95px);
     }
 
+
     .intro-cube-bottom {
       transform: rotateX(-90deg) translateZ(95px);
     }
+
 
     .intro-cube-face img {
       max-width: 74%;
@@ -389,7 +416,6 @@
     }
   }
 </style>
-
 <!-- Intro Overlay -->
 <div
   id="intro-overlay"
